@@ -1,22 +1,19 @@
-// import './App.css';
+import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import Nav from '../components/Nav';
-import Main from '../components/Main';
-import Jeju from '../pages/Jeju';
+import Nav from './component/Nav';
+import Main from './pages/Main';
+import Footer from './component/Footer';
+
 
 function App() {
   return (
-    <div>
-
+    <div className="App">
       <Nav />
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/Jeju" element={<Jeju />} />
-        </Routes>
+      <Routes>
+        <Route path="/" element={<Main />} />
+      </Routes>
       <Footer />
-
     </div>
-    
   );
 }
 
