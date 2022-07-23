@@ -8,6 +8,15 @@ const Wrapper = styled.div`
   height: 75vh;
   text-decoration: none;
 
+  div {
+    width: 80%;
+    height: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+  }
+
   .jeju {
     /* display: flex; */
     display: inline-block;
@@ -23,9 +32,15 @@ const Wrapper = styled.div`
 const Main = () => {
   return (
     <>
+
     <Wrapper>
-    <div>Main</div>
+    
+    <div>
+
+    <span>Main</span>
     <Link to="/Jeju" className="jeju">제주 여행</Link>
+    
+    </div>
     
     </Wrapper>
 
