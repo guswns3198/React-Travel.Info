@@ -8,7 +8,7 @@ function App() {
           <p>
             Travel Info
           </p>
-          <div>hihi</div>
+          <div>22222</div>
         </header>
     </div>
   );
