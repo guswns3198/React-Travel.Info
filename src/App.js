@@ -8,8 +8,7 @@ function App() {
           <p>
             Travel Info
           </p>
-          <div>22222</div>
-          <div>333333 444444</div>
+          <span>Real Final Fighting !!!!</span>
         </header>
     </div>
   );
