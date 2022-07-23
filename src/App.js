@@ -8,6 +8,7 @@ function App() {
           <p>
             Travel Info
           </p>
+          <div>hihi</div>
         </header>
     </div>
   );
