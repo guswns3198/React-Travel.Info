@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faPlaneDeparture, faGift } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faPlaneDeparture } from "@fortawesome/free-solid-svg-icons";
 import React, { useState, useEffect } from 'react';
 import Nav_item from "./Nav_item";
 import "../App.css";
@@ -16,6 +16,7 @@ const Wrapper = styled.div`
   background-color: #263343;
   padding: 8px 30px;
   background-size: cover;
+  user-select:none;
 
   a{
     text-decoration: none;
@@ -146,7 +147,7 @@ const Nav = () => {
 
         <div className="navbar_links">
             <a href="https://github.com/guswns3198/React-Travel.Info" target='_blank'>
-            <FontAwesomeIcon icon={faGift}/>
+              깃
             </a>
         </div>
 
