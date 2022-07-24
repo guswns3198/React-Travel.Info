@@ -9,6 +9,7 @@ import "../App.css";
 const Wrapper = styled.div`
   width: 100%;
   height: 15vh;
+  margin: 0 auto;
   display: flex;
   justify-content: space-around;
   align-items: center;
