@@ -13,6 +13,7 @@ import Right from "../img/right.png";
 const Div = styled.div`
   width: 100%;
   height: 75vh;
+  user-select: none;
 
    ul, li {
      list-style: none;
@@ -85,6 +86,7 @@ const Div = styled.div`
    [id="slide04"]:checked ~ .slidelist .slideitem {
      transform: translateX(-300%);
    }
+
 `;
 
 
