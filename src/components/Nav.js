@@ -4,19 +4,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faPlaneDeparture, faGift } from "@fortawesome/free-solid-svg-icons";
 import React, { useState, useEffect } from 'react';
 import Nav_item from "./Nav_item";
+import "../App.css";
 
 const Wrapper = styled.div`
   width: 100%;
   height: 15vh;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   background-color: #263343;
   padding: 8px 30px;
+  background-size: cover;
 
   a{
     text-decoration: none;
-    color:white;
+    color:black;
   }
 
   .navbar_logo{
@@ -28,7 +30,7 @@ const Wrapper = styled.div`
     display: flex;
     list-style: none;
     padding-left: 0;
-    color:white;
+    color:black;
   }
 
   .navbar_menu li{
@@ -42,7 +44,7 @@ const Wrapper = styled.div`
   }
 
   .navbar_links{
-    color: white;
+    color: black;
     list-style: none;
     display: flex;
     justify-content: center;
@@ -51,7 +53,7 @@ const Wrapper = styled.div`
   }
 
   .menubar{
-    color: white;
+    color: black;
     font-size: 200%;
     position: absolute;
     right: 32px;
@@ -59,7 +61,7 @@ const Wrapper = styled.div`
   }
 
   .event{
-    color: skyblue;
+    color: Indigo;
     position: relative;
     animation: bounce 1s infinite linear;
   }
@@ -128,7 +130,7 @@ const Nav = () => {
 
   return (
     <>
-    <Wrapper>
+    <Wrapper className="hi">
       <div className="navbar_logo">
       <FontAwesomeIcon icon={faPlaneDeparture}/>
         <Link to='/'>오늘떠나</Link>
@@ -150,7 +152,6 @@ const Nav = () => {
       <div className='menubar'>
       <FontAwesomeIcon icon={faBars} onClick={handleClick}/>
       </div>
-      
     </Wrapper>
     {open ? <Nav_item /> : undefined}
     </>
