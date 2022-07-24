@@ -5,6 +5,9 @@
 }
 
 .container {
-  /* border: 1px solid red; */
+  -ms-overflow-style: none;
 }
-
+  
+ ::-webkit-scrollbar {
+   display: none;
+ }
