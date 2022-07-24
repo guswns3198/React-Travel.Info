@@ -8,6 +8,7 @@ import Nav_item from "./Nav_item";
 const Wrapper = styled.div`
   width: 100%;
   height: 15vh;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
