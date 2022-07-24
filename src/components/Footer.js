@@ -1,17 +1,18 @@
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  background-color: #263343;
   width: 100%;
   height: 10vh;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Footer = () => {
   return (
     <>
     <Wrapper>
-    <div></div>
+    <div>@Copyright HJ,SH. All right reserved.</div>
     </Wrapper>
     </>
   )

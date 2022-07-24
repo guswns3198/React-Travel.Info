@@ -2,8 +2,7 @@ import styled from "styled-components";
 
 const Item = styled.div`
 
-user-select:none;
-
+    user-select:none;
     background-color: #263343;
     color: white;
     display: flex;
