@@ -126,9 +126,9 @@ const Nav = () => {
     return setopen(!open)
   }
 
-  useEffect(() =>{
-    console.log(open)
-  },[open])
+  // useEffect(() =>{
+  //   console.log(open)
+  // },[open])
 
   return (
     <>
@@ -142,7 +142,7 @@ const Nav = () => {
             <li>국내여행</li>
             <li>해외여행</li>
             <li className="event">이벤트</li>
-            <li>FAQ</li>
+            <li><Link to='/FAQ'>FAQ</Link></li>
         </ul>
 
         <div className="navbar_links">

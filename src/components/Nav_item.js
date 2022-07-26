@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Item = styled.div`
@@ -54,7 +55,7 @@ const Nav_item = () =>{
             <li>국내여행</li>
             <li>해외여행</li>
             <li className="event">이벤트</li>
-            <li>FAQ</li>
+            <li><Link to='/FAQ'>FAQ</Link></li>
             <div className="navbar_links">
             <a href="https://github.com/guswns3198/React-Travel.Info" target='_blank'>깃</a>
         </div>
