@@ -3,6 +3,7 @@ import Main from './components/Main';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Jeju from './pages/Jeju';
+import FAQ from './pages/FAQ';
 import "./App.css";
 
 
@@ -13,6 +14,7 @@ function App() {
             <Nav />
               <Routes>
                 <Route path="/" element={<Main />} />
+                <Route path="/FAQ" element={<FAQ />} />
                 <Route path="/Jeju" element={<Jeju />} />
               </Routes>
             <Footer />
