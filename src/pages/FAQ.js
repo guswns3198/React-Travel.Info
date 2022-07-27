@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useState } from 'react';
-
+import Footer from "../components/Footer";
 
 const Wrapper = styled.div`
     height: 75vh;
@@ -66,14 +66,17 @@ const ModalBtn = styled.div`
 
 `
 
+
 const FAQ = () => {
 
     const [isOpen, setIsOpen] = useState(false);
-    const [select, setSelect] = useState(null)
+    const [select, setSelect] = useState(null);
 
     const openModalHandler = (e) => {
       setIsOpen(!isOpen)
     };
+
+
 
     const list = [
         { id:0, name: '여행상품 예약은 어떻게 하나요 ?',
@@ -83,6 +86,8 @@ const FAQ = () => {
         { id:2, name: '해외 패키지 상품 예약이 가능한가요?',
             content: '현재 코로나로 인하여 각 국가별 입국 가능 조건이 상이하며, 사전고지 없이 변경될 수 있습니다.'}
     ]
+
+
 
     const choice = (el) => {
         setSelect(list[el].content)
@@ -115,6 +120,7 @@ const FAQ = () => {
                     </ModalView>
             </ModalBackdrop>
             : undefined}
+        <Footer />
         </Wrapper>
         </>
     )
