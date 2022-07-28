@@ -35,6 +35,8 @@ const Wrapper = styled.div`
         margin: 10px;
         display: flex;
         height: 100px;
+        align-items: center;
+        justify-content: center;
     }
     
     .list_head{
@@ -65,10 +67,11 @@ const Wrapper = styled.div`
     
     .check{
         color: green;
-        height: 100%;
-        width: 100%;
+        height: 40px;
+        width: 40px;
         // display: none;
-    }
+        padding-left: 10px;
+        }
 
     .answer_container{
         border: 3px solid black;
