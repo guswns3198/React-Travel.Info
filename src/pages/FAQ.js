@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import dummy_data from "../dummy/dummy_data"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faBluetooth } from "@fortawesome/free-brands-svg-icons";
 
 const Wrapper = styled.div`
     height: 75vh;
@@ -37,6 +38,7 @@ const Wrapper = styled.div`
         height: 100px;
         align-items: center;
         justify-content: center;
+        cursor: pointer;
     }
     
     .list_head{
@@ -74,11 +76,33 @@ const Wrapper = styled.div`
         }
 
     .answer_container{
-        border: 3px solid black;
+        border: 9px solid OliveDrab;
         border-radius: 20px;
         height: 200px;
         margin: 0px 10px;
+        animation: fadeIn 0.6s ease-in-out 0s forwards;
     }
+
+    .answer_head{
+        margin: 10px;
+    }
+
+    .line{
+        border-bottom: 0.5px solid black;
+        padding-bottom: 9px;
+    }
+
+    @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+      
+        to {
+          opacity: 1;
+        }
+      }
+
+
 
 `
 const ModalBackdrop = styled.div`
@@ -125,15 +149,29 @@ const ModalBtn = styled.div`
         display:flex;
     }
 
+    .0{
+        border: 10px solid black;
+    }
+
     .btn{
         border: 5px solid black;
         border-radius: 20px;
-        height: 150px;
+        height: 80px;
         width: 260px;
         margin: 20px;
         display: flex;
         justify-content: center;
         align-items: center;
+        color: white;
+        background-color: gray;
+        font-size: 120%;
+        font-weight: bold;
+    }
+
+    .btn:hover{
+        background-color: lightSkyBlue;
+        color: black;
+        cursor: pointer;
     }
 
 `
@@ -168,34 +206,51 @@ const FAQ = () => {
             content: '여행상품의 예약은 온라인상에서, 전화, 또는 e-mail을 통해 문의 및 예약하실수 있으며, 365일 24시간 언제든지 예약하실 수 있습니다. (단, 전화상담 가능시간 평일 09:00~18:00 / 토,일요일 및 공휴일 휴무) 예약후 영업일기준 24시간내에 고객께 전화나 메일로 여행 출발일로부터 종료일까지 예약의 전반적인 사항을 체크하여 처리해 드립니다.'},
         { id:1, name: '예약을 취소하고 싶습니다.',
             content: '인터넷상에서 예약취소나 수정은 불가능합니다. 예약취소나 여행자정보 변경을 원하시면 반드시 담당자에게 연락을 주셔야 합니다. 모든 취소는 근무일(공휴일 및 토, 일요일 제외) 및 근무시간(18시 30분까지) 내에 취소요청을 해주시기 바랍니다. 또한 여행자의 여행계약 해제 요청이 있는 경우 여행약관에 의거 소정의 최소료비용이 발생할 수 있습니다.'},
-        { id:2, name: '해외 패키지 상품 예약이 가능한가요?',
+        { id:2, name: '해외 패키지 예약이 가능한가요?',
             content: '현재 코로나로 인하여 각 국가별 입국 가능 조건이 상이하며, 사전고지 없이 변경될 수 있습니다.'}
     ]
 
 
+    const handleColor = (e) =>{
+
+        document.getElementById(e).style.background = "lightSkyBlue";
+        
+    }
+
+    const gray = () => {
+        let a = document.querySelectorAll('.btn');
+        for(let i = 0 ; i < a.length; i++){
+            a[i].style.background = 'gray';
+        }
+    }
 
 
 
     return(
         <>
         <Wrapper>
-                <div className="q">자주 묻는 질문</div>
+                <h1 className="q">자주 묻는 질문</h1>
             <ModalBtn>
                 <div className="modal_container">
                     <ul className="modal_item">
                     {list.map((el,index) =>{
-                        return <li className="btn"
+                        return <li className='btn'
                                 key={index}
+                                id={el.id}
                                 onClick={() =>{
                                     openModalHandler();
-                                    choice(el.id)
+                                    choice(el.id);
+                                    handleColor(el.id);
                                     }}>
                                     {el.name}</li>
                     })}
                     </ul>
                 </div>
             </ModalBtn>
-            {isOpen ? <ModalBackdrop onClick={openModalHandler}>
+            {isOpen ? <ModalBackdrop onClick={() =>{
+                openModalHandler();
+                gray();
+            }}>
                     <ModalView onClick={(e) => {
                         e.stopPropagation();
                     }}>
@@ -227,8 +282,14 @@ const FAQ = () => {
                                     </div>
                                     {qopen === el.id && click ?
                                      <div className="answer_container">
-                                        <div className="list_head">{el.sub_content}</div>
-                                        <div>답변</div>
+                                        <div className="answer_head line">
+                                            Q. {el.sub_content}
+                                        </div>
+                                        <div>
+                                            <div className="answer_head">
+                                                A. {el.answer}
+                                            </div>
+                                        </div>
                                      </div> :
                                       undefined}
                                 </div>
