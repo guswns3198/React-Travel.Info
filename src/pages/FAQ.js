@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import { useState } from 'react';
 import Footer from "../components/Footer";
+import dummy_data from "../dummy/dummy_data"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
 const Wrapper = styled.div`
     height: 75vh;
@@ -8,6 +11,72 @@ const Wrapper = styled.div`
         display: flex;
         justify-content: center;
     }
+    .container{
+        display: flex;
+        justify-content: center;
+    }
+    .QNA{
+        margin: 30px;
+        border: 6px solid black;
+        height: 100vh;
+        width: 800px;
+        border-radius: 20px
+    }
+    .head{
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+
+    .list_container{
+        border: 3px solid black;
+        border-radius: 20px;
+        margin: 10px;
+        display: flex;
+        height: 100px;
+    }
+    
+    .list_head{
+        display:flex;
+        justify-content: space-between;
+        width: 500px;
+        margin: 10px;
+    }
+
+    .end{
+        display:flex;
+        justify-content: flex-end;
+        align-items: end;
+        height:50%;
+    }
+    
+    button{
+        width: 50px;
+        height: 30px;
+        margin: 10px;
+    }
+
+    .button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .check{
+        color: green;
+        height: 100%;
+        width: 100%;
+        // display: none;
+    }
+
+    .answer_container{
+        border: 3px solid black;
+        border-radius: 20px;
+        height: 200px;
+        margin: 0px 10px;
+    }
+
 `
 const ModalBackdrop = styled.div`
   position: fixed;
@@ -71,10 +140,23 @@ const FAQ = () => {
 
     const [isOpen, setIsOpen] = useState(false);
     const [select, setSelect] = useState(null);
+    const [click, setClick] = useState(false);
+    const [qopen, setQopen] = useState('');
 
     const openModalHandler = (e) => {
       setIsOpen(!isOpen)
     };
+
+    const choice = (el) => {
+        setSelect(list[el].content)
+    };
+
+    const openQuestions = (e) => {
+          setQopen(e);
+          setClick(!click);
+
+    }
+
 
 
 
@@ -89,9 +171,7 @@ const FAQ = () => {
 
 
 
-    const choice = (el) => {
-        setSelect(list[el].content)
-    }
+
 
     return(
         <>
@@ -120,41 +200,40 @@ const FAQ = () => {
                     </ModalView>
             </ModalBackdrop>
             : undefined}
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            
-        <Footer />
+            <div className="container">
+                <div className="QNA">
+                    <h2 className="head">질문을 등록해 주세요!</h2>
+                        {dummy_data.map((el) => {
+                            return (
+                                <div key={el.id}>
+                                    <div className="list_container" onClick={() => {
+                                        openQuestions(el.id);
+                                    }}>
+                                        <div className="list">
+                                            <div className="list_head">
+                                                <div>{el.main_content}</div>
+                                                <div>{el.username}</div>
+                                            </div>
+                                            <div className="end">{el.updatedAt}</div>
+                                        </div>
+                                        <div className="button">
+                                            <button>edit</button>
+                                            <button>delite</button>
+                                        </div>
+                                            <FontAwesomeIcon icon={faCheck} className='check' />
+                                    </div>
+                                    {qopen === el.id && click ?
+                                     <div className="answer_container">
+                                        <div className="list_head">{el.sub_content}</div>
+                                        <div>답변</div>
+                                     </div> :
+                                      undefined}
+                                </div>
+                            )
+                        })}
+                </div>
+            </div>
+            <Footer />
         </Wrapper>
         </>
     )
