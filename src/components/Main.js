@@ -10,7 +10,7 @@ import Borakay from "../img/borakay.jpeg";
 import Left from "../img/left.png";
 import Right from "../img/right.png";
 import ImgOne from "../assets/flight.jpeg"
-
+import Footer from "./Footer"
 
 const Section = styled.section`
  width: 100vw;
@@ -245,6 +245,7 @@ const Main = () => {
           </Div>
         
     </Section>
+    {Footer}
     </>
   )
 }
