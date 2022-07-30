@@ -4,10 +4,44 @@ import Footer from "../components/Footer";
 import dummy_data from "../dummy/dummy_data"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
-import { faBluetooth } from "@fortawesome/free-brands-svg-icons";
+import shortid from "shortid";
 
 const Wrapper = styled.div`
     height: 75vh;
+
+    .q_container{
+        border: 3px solid black;
+        border-radius: 20px;
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .text{
+        display:flex;
+        justify-content: space-around;
+    }
+
+    textarea{
+        width: 80%;
+		padding: 10px;
+        box-sizing: border-box;
+		border: solid 2px #1E90FF;
+		border-radius: 5px;
+		font-size: 16px;
+    }
+
+    input{
+        width:79.8%;
+        height: 30px;
+        margin-left:22px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        font-size:16px;
+    }
+
+    .button2{
+    }
+
     .q{
         display: flex;
         justify-content: center;
@@ -78,7 +112,6 @@ const Wrapper = styled.div`
     .answer_container{
         border: 9px solid OliveDrab;
         border-radius: 20px;
-        height: 200px;
         margin: 0px 10px;
         animation: fadeIn 0.6s ease-in-out 0s forwards;
     }
@@ -183,6 +216,15 @@ const FAQ = () => {
     const [select, setSelect] = useState(null);
     const [click, setClick] = useState(false);
     const [qopen, setQopen] = useState('');
+    const [title, setTitle] = useState('');
+    const [content, setContent] = useState('')
+    const [tweets, setTweets] = useState(dummy_data);
+    const [check, setCheck] = useState(false)
+
+    const isCheck = (e) => {
+        setCheck(true);
+    } 
+
 
     const openModalHandler = (e) => {
       setIsOpen(!isOpen)
@@ -196,6 +238,31 @@ const FAQ = () => {
           setQopen(e);
           setClick(!click);
 
+    }
+
+    const handleChangeTitle = (e) => {
+        setTitle(e.target.value)
+      }
+    
+    const handleChangeContent = (e) => {
+        setContent(e.target.value)
+      }
+
+    const handleButtonClick = (e) => {
+
+        if(title !== '' && content !== ''){
+        const tweet = {
+            id: shortid(),
+            username: 'sehyeon',
+            password: '123',
+            main_content: title,
+            sub_content: content,
+            updatedAt: new Date().toLocaleDateString('ko-KR')
+        };
+
+        const newTweets = [tweet, ...tweets]
+        setTweets(newTweets)
+        }
     }
 
 
@@ -261,7 +328,17 @@ const FAQ = () => {
             <div className="container">
                 <div className="QNA">
                     <h2 className="head">질문을 등록해 주세요!</h2>
-                        {dummy_data.map((el) => {
+                    <div className="q_container">
+                        <div>
+                            <input placeholder="질문 제목을 입력하세요" type='text' onChange={handleChangeTitle}></input>
+                        </div>
+                        <div className="text">
+                            <textarea placeholder="답변을 입력하세요." onChange={handleChangeContent}></textarea>
+                            <button className="button2" onClick={handleButtonClick}>등록</button>
+                        </div>
+                    </div>
+                    
+                        {tweets.map((el) => {
                             return (
                                 <div key={el.id}>
                                     <div className="list_container" onClick={() => {
@@ -269,16 +346,17 @@ const FAQ = () => {
                                     }}>
                                         <div className="list">
                                             <div className="list_head">
-                                                <div>{el.main_content}</div>
+                                                <div>Q. {el.main_content}</div>
                                                 <div>{el.username}</div>
                                             </div>
                                             <div className="end">{el.updatedAt}</div>
                                         </div>
                                         <div className="button">
-                                            <button>edit</button>
-                                            <button>delite</button>
+                                            <button>수정</button>
+                                            <button>삭제</button>
                                         </div>
-                                            <FontAwesomeIcon icon={faCheck} className='check' />
+                                        <FontAwesomeIcon icon={faCheck} className='check' />
+                                            
                                     </div>
                                     {qopen === el.id && click ?
                                      <div className="answer_container">
@@ -289,6 +367,11 @@ const FAQ = () => {
                                             <div className="answer_head">
                                                 A. {el.answer}
                                             </div>
+                                        </div>
+                                        <div className="text">
+                                            <textarea placeholder="답변을 입력하세요."></textarea>
+                                            <button className="button2" onClick={() =>{
+                                            }}>등록</button>
                                         </div>
                                      </div> :
                                       undefined}
