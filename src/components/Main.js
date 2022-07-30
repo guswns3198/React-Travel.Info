@@ -16,12 +16,24 @@ import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
 const Section = styled.section`
  width: 100vw;
- height: 60vh;
+ height: 100vh;
  display: flex;
  background-color: #FEFBF6;
-`;
 
-const Nav = styled.nav`
+ .flight {
+  color: #3330E4;
+    font-weight: bold;
+    font-size: 2rem;
+    padding-bottom: 10px;
+ }
+ .flight2 {
+  color: #513252;
+    font-weight: bold;
+    font-size: 1.3rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+ }
+
+ nav {
   width: 20vw;
   height: 100vh;
   margin-left: auto;
@@ -36,9 +48,9 @@ const Nav = styled.nav`
   @media (max-width: 1350px) {
       display: none;
   }
-`;
+ }
 
-const Span = styled.span`
+ .minisection {
   background-color: royalblue;
   width: 80%;
   height: 20%;
@@ -56,9 +68,9 @@ const Span = styled.span`
   position: relative;
   cursor: pointer;
   border-radius: 30px;
-`;
+ }
 
-const Span2 = styled.span`
+ .minisection2 {
   background-color: royalblue;
   width: 80%;
   height: 20%;
@@ -76,56 +88,29 @@ const Span2 = styled.span`
   position: relative;
   cursor: pointer;
   border-radius: 30px;
+ }
 
-`;
-
-const Flight = styled.div`
-    color: #3330E4;
+ .star {
+  color: #ffffff;
     font-weight: bold;
     font-size: 2rem;
     padding-bottom: 10px;
-`;
+ }
 
-const Flight2 = styled.div`
-    color: #513252;
+ .star2 {
+  color: #ffffff;
     font-weight: bold;
     font-size: 1.3rem;
-`;
+ }
 
-const Star = styled.div`
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 2rem;
-    padding-bottom: 10px;
-`;
-
-const Star2 = styled.div`
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 1.3rem;
-`;
-
-const RightSide = styled.section`
-  position: relative;
-  left: 20%;
-  background-color: #FEFBF6;
-
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* border: 3px solid red; */
-`;
-
-const Div = styled.div`
+ .slide {
   padding-top: 20px;
-  width: 100vw;
-  height: 100vh;
+  width: 80vw;
+  height: 70vh;
   user-select: none;
-  flex-grow: 2;
   position: absolute;
-  left: 10%;
+  left: 20%;
+
 
    ul, li {
      list-style: none;
@@ -200,69 +185,33 @@ const Div = styled.div`
      transform: translateX(-300%);
     }
     
-    `;
+    .selectMenu {
+      width: 80vw;
+      background: #FEFBF6;
+      color: gray;
+      /* font-weight: bold; */
+      font-size: 1.5rem;
+      display: flex;
+      justify-content: center;
+      padding-top: 50px;
+      justify-content: space-around;
+    }
 
-const Tab = styled.span`
-  display: flex;
-  position: relative;
-  top: -45%;
-  right: 12.5%;
-  padding-top: 20px;
-  padding-bottom: 20px;
-`;
+    .selectMenu span {
+      border: 2px solid lightgray;
+      border-radius: 20px;
+      padding: 5px 15px;  
+    }
 
-const TabOne = styled.span`
-  background-color: #D6EFED;
-  color: green;
-  font-weight: bold;
-  margin: 0px 50px;
-  font-size: 1.5rem;
-  padding: 10px 20px;
-  border-radius: 20px;
-  cursor: pointer;
+    .selectMenu span:hover {
+      background: #F6F6F6;
+      color: #29D493;
+    }
 
-  :hover {
-    background-color: #FCF8E8;
   }
-`;
+  `;
 
-const TabTwo = styled.span`
-  background-color: #D6EFED;
-  color: green;
-  font-weight: bold;
-  margin: 0px 50px;
-  font-size: 1.5rem;
-  padding: 10px 20px;
-  border-radius: 20px;
-  cursor: pointer;
 
-  :hover {
-    background-color: #FCF8E8;
-  }
-`;
-
-const TabThree = styled.span`
-  background-color: #D6EFED;
-  color: green;
-  font-weight: bold;
-  margin: 0px 50px;
-  font-size: 1.5rem;
-  padding: 10px 20px;
-  border-radius: 20px;
-  cursor: pointer;
-
-  :hover {
-    background-color: #FCF8E8;
-  }
-`;
-
-const ChangeTab = styled.div`
-  width: 100%;
-  height: 80vh;
-  /* border: 3px solid red; */
-  position: relative;
-  right: 12.5%;
-`;
 
 //이미지 슬라이드 크기 1100px X 480px
 
@@ -272,87 +221,69 @@ const Main = () => {
     
     <Section>
 
-          <Nav>
-              <Span>
-                <Flight>초특가 항공권</Flight>
-                <Flight2>대한민국 최저가</Flight2>
-              </Span>
-              <Span2>
-                <Star>별보러 몽골</Star>
-                <Star2>최대 10만원 즉시할인</Star2>
-              </Span2>
-          </Nav>
+          <nav>
+              <div className="minisection">
+                <span className="flight">초특가 항공권</span>
+                <span className="flight2">대한민국 최저가</span>
+              </div>
+              <div className="minisection2">
+                <span className="star">별보러 몽골</span>
+                <span className="star2">최대 10만원 즉시할인</span>
+              </div>
+          </nav>
 
-          <Div><div className="slidebox">
-                    <input type="radio" name="slide" id="slide01" />
-                    <input type="radio" name="slide" id="slide02" />
-                    <input type="radio" name="slide" id="slide03" />
-                    <input type="radio" name="slide" id="slide04" />
-                    <ul className="slidelist">
-                      <li className="slideitem">
-                          <div>
-                            <label htmlFor="slide04" className="left"></label>
-                            <label htmlFor="slide02" className="right"></label>
-                            <a><img src={Korea} /></a>
-                          </div>
-                      </li>
-                      <li className="slideitem">
-                          <div>
-                            <label htmlFor="slide01" className="left"></label>
-                            <label htmlFor="slide03" className="right"></label>
-                            <a><img src={Vegas} /></a>
-                          </div>
-                      </li>
-                      <li className="slideitem">
-                          <div>
-                            <label htmlFor="slide02" className="left"></label>
-                            <label htmlFor="slide04" className="right"></label>
-                            <a><img src={Greece} /></a>
-                          </div>
-                      </li>
-                      <li className="slideitem">
-                          <div>
-                            <label htmlFor="slide03" className="left"></label>
-                            <label htmlFor="slide01" className="right"></label>
-                            <a><img src={Borakay} /></a>
-                          </div>
-                      </li>
-                    </ul>
-                  </div>
-          </Div>
+          {/* <div className="right"> */}
+
+          <div className="slide">
+              <div className="slidebox">
+                <input type="radio" name="slide" id="slide01" />
+                <input type="radio" name="slide" id="slide02" />
+                <input type="radio" name="slide" id="slide03" />
+                <input type="radio" name="slide" id="slide04" />
+                <ul className="slidelist">
+                  <li className="slideitem">
+                      <div>
+                        <label htmlFor="slide04" className="left"></label>
+                        <label htmlFor="slide02" className="right"></label>
+                        <a><img src={Korea} /></a>
+                      </div>
+                  </li>
+                  <li className="slideitem">
+                      <div>
+                        <label htmlFor="slide01" className="left"></label>
+                        <label htmlFor="slide03" className="right"></label>
+                        <a><img src={Vegas} /></a>
+                      </div>
+                  </li>
+                  <li className="slideitem">
+                      <div>
+                        <label htmlFor="slide02" className="left"></label>
+                        <label htmlFor="slide04" className="right"></label>
+                        <a><img src={Greece} /></a>
+                      </div>
+                  </li>
+                  <li className="slideitem">
+                      <div>
+                        <label htmlFor="slide03" className="left"></label>
+                        <label htmlFor="slide01" className="right"></label>
+                        <a><img src={Borakay} /></a>
+                      </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="selectMenu">
+              <span>오늘의 BEST 여행지</span>
+              <span>항공사가 추천하는 여행지</span>
+              <span>얼리버드 할인 특가</span>
+              </div>
+          
+          </div>
+              
+
+          {/* </div> */}
 
     </Section>
-
-            {/* 1 phase finish */}
-
-
-      <RightSide>
-        <div>
-          <Tab>
-            <TabOne>오늘의 인기 여행지</TabOne>
-            <TabTwo>항공사 추천 BEST 여행지</TabTwo>
-            <TabThree>얼리버드 특가</TabThree>
-          </Tab>
-
-
-          <ChangeTab>
-        <Routes>
-          <Route path="/" element={<TabFirst />} />
-          {/* <Route path="/TabTwice" element={<TabTwice />} />
-          <Route path="/TabThird" element={<TabThird />} /> */}
-        </Routes>
-          </ChangeTab>
-          </div>
-
-      </RightSide>
-
-
-
-
-
-
-
-    
     {/* <Footer /> */}
     </>
   )
