@@ -7,9 +7,9 @@ import Korea from "../img/korea.jpeg";
 import Vegas from "../img/vegas.jpeg";
 import Greece from "../img/greece.jpeg";
 import Borakay from "../img/borakay.jpeg";
-import Left from "../img/left.png";
-import Right from "../img/right.png";
-import ImgOne from "../assets/flight.jpeg"
+// import Left from "../img/left.png";
+// import Right from "../img/right.png";
+// import ImgOne from "../assets/flight.jpeg"
 import Footer from "./Footer"
 // import { Routes } from "react-router-dom";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
@@ -200,12 +200,20 @@ const Section = styled.section`
     .selectMenu span {
       border: 2px solid lightgray;
       border-radius: 20px;
-      padding: 5px 15px;  
+      padding: 5px 15px;
+      cursor: pointer;
     }
 
     .selectMenu span:hover {
       background: #F6F6F6;
       color: #29D493;
+    }
+
+    .imageTab {
+      padding-top: 50px;
+      display: flex;
+      height: 50vh;
+      justify-content: space-between;
     }
 
   }
@@ -232,7 +240,6 @@ const Main = () => {
               </div>
           </nav>
 
-          {/* <div className="right"> */}
 
           <div className="slide">
               <div className="slidebox">
@@ -273,16 +280,17 @@ const Main = () => {
               </div>
 
               <div className="selectMenu">
-              <span>오늘의 BEST 여행지</span>
+              <span onClick={TabFirst}>오늘의 BEST 여행지</span>
               <span>항공사가 추천하는 여행지</span>
               <span>얼리버드 할인 특가</span>
               </div>
-          
+
+              <div className="imageTab">
+              <TabFirst />
+              </div>
+
           </div>
               
-
-          {/* </div> */}
-
     </Section>
     {/* <Footer /> */}
     </>
@@ -302,21 +310,20 @@ const Divs = styled.div`
   grid-auto-rows: 65px;
   grid-gap: 5px;
   justify-content: center;
+  
+  .tab1 {
+    display: flex;
+    width: 100%;
+    height: 200%;
+  }
 
   img {
-    padding: 10px;
-    width: 33%;
-    height: 33%;
+    padding: 0px 10px;
+    width: 30%;
+    height: 50%;
     cursor: pointer;
   }
 
-  div {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
 
   .word {
     height: 40%;
@@ -345,7 +352,7 @@ const Divs = styled.div`
     cursor: pointer;
   }
 
-  .word2 {
+  /* .word2 {
     position: relative;
     left: 3%;
   }
@@ -353,7 +360,7 @@ const Divs = styled.div`
   .word3 {
     position: relative;
     left: 12%;
-  }
+  } */
 `;
 
 
@@ -361,7 +368,7 @@ const TabFirst = () => {
   return (
     <>
     <Divs>
-      <div>
+      <div className="tab1">
       <img className="one" src="https://img.modetour.com/eagle/photoimg/11093/bfile/636977501233548972.JPG" />
       
 
