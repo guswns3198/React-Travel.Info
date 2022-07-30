@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { FaGithub } from "react-icons/fa";
 
 const Item = styled.div`
 
@@ -8,6 +9,10 @@ const Item = styled.div`
     color: white;
     display: flex;
     justify-content: center;
+
+    .git{
+      font-size: 150%;
+    }
 
     a{
         text-decoration: none;
@@ -57,7 +62,9 @@ const Nav_item = () =>{
             <li className="event">이벤트</li>
             <li><Link to='/FAQ'>FAQ</Link></li>
             <div className="navbar_links">
-            <a href="https://github.com/guswns3198/React-Travel.Info" target='_blank'>깃</a>
+            <a href="https://github.com/guswns3198/React-Travel.Info" target='_blank'>
+            <FaGithub className="git"/>
+            </a>
         </div>
         </ul>
 

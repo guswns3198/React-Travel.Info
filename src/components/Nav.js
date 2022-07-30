@@ -5,6 +5,7 @@ import { faBars, faPlaneDeparture } from "@fortawesome/free-solid-svg-icons";
 import React, { useState, useEffect } from 'react';
 import Nav_item from "./Nav_item";
 import "../App.css";
+import { FaGithub } from "react-icons/fa";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -17,6 +18,10 @@ const Wrapper = styled.div`
   padding: 8px 30px;
   background-size: cover;
   user-select:none;
+
+  .git{
+    font-size: 200%;
+  }
 
   a{
     text-decoration: none;
@@ -147,7 +152,7 @@ const Nav = () => {
 
         <div className="navbar_links">
             <a href="https://github.com/guswns3198/React-Travel.Info" target='_blank'>
-              깃
+            <FaGithub className="git"/>
             </a>
         </div>
 
