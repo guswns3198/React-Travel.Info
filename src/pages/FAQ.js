@@ -220,9 +220,10 @@ const FAQ = () => {
     const [click, setClick] = useState(false);
     const [qopen, setQopen] = useState('');
     const [title, setTitle] = useState('');
-    const [content, setContent] = useState('')
+    const [content, setContent] = useState('');
     const [tweets, setTweets] = useState(dummy_data);
-    const [answer, setAnswer] = useState('')
+    const [answer, setAnswer] = useState('');
+    const [coment, setComent] = useState(false);
 
     const openModalHandler = (e) => {
       setIsOpen(!isOpen)
@@ -266,8 +267,11 @@ const FAQ = () => {
         }
     }
 
-    const handleButtonClick2 = (e) => {
+
+    const handleButtonClick2 = () => {
+        setComent(true)
     }
+
 
 
     const clear = () => {
@@ -298,6 +302,8 @@ const FAQ = () => {
             a[i].style.background = 'gray';
         }
     }
+
+
 
 
 
@@ -366,7 +372,7 @@ const FAQ = () => {
                                             <button>수정</button>
                                             <button>삭제</button>
                                         </div>
-                                        {el.answer !== undefined ?
+                                        {el.answer !== undefined || coment === true ?
                                         <FontAwesomeIcon icon={faCheck} className='check' /> :
                                         <FontAwesomeIcon icon={faCheck} className='check unCheck' />}
                                         
@@ -381,10 +387,15 @@ const FAQ = () => {
                                             <div className="answer_head">
                                                 A. {el.answer}
                                             </div> :
-                                            undefined
+                                                undefined
                                             }
+                                            {coment && el.answer === undefined ?
+                                            <div className="answer_head">
+                                                A. {answer}
+                                            </div> :
+                                            undefined}
                                         </div>
-                                        {el.answer === undefined?
+                                        {el.answer === undefined && coment === false ?
                                         <div className="text">
                                             <textarea placeholder="답변을 입력하세요." onChange={handleChangeAnswer}></textarea>
                                             <button className="button2" onClick={() =>{
