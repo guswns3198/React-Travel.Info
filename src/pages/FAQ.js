@@ -258,7 +258,6 @@ const FAQ = () => {
                 password: '123',
                 main_content: title,
                 sub_content: content,
-                answer: answer,
                 updatedAt: new Date().toLocaleDateString('ko-KR')
         };
 
@@ -367,7 +366,7 @@ const FAQ = () => {
                                             <button>수정</button>
                                             <button>삭제</button>
                                         </div>
-                                        {el.answer !== '' ?
+                                        {el.answer !== undefined ?
                                         <FontAwesomeIcon icon={faCheck} className='check' /> :
                                         <FontAwesomeIcon icon={faCheck} className='check unCheck' />}
                                         
@@ -378,14 +377,14 @@ const FAQ = () => {
                                             Q. {el.sub_content}
                                         </div>
                                         <div>
-                                            {el.answer !== '' ?
+                                            {el.answer !== undefined ?
                                             <div className="answer_head">
                                                 A. {el.answer}
                                             </div> :
                                             undefined
                                             }
                                         </div>
-                                        {el.answer === ''?
+                                        {el.answer === undefined?
                                         <div className="text">
                                             <textarea placeholder="답변을 입력하세요." onChange={handleChangeAnswer}></textarea>
                                             <button className="button2" onClick={() =>{
