@@ -31,9 +31,9 @@ const Wrapper = styled.div`
     }
 
     input{
-        width:79.8%;
+        width:79.7%;
         height: 30px;
-        margin-left:22px;
+        margin-left:18px;
         border-radius: 5px;
         margin-bottom: 10px;
         font-size:16px;
@@ -53,7 +53,6 @@ const Wrapper = styled.div`
     .QNA{
         margin: 30px;
         border: 6px solid black;
-        height: 100vh;
         width: 800px;
         border-radius: 20px
     }
@@ -108,6 +107,10 @@ const Wrapper = styled.div`
         // display: none;
         padding-left: 10px;
         }
+
+    .unCheck{
+        color: lightgray;
+    }
 
     .answer_container{
         border: 9px solid OliveDrab;
@@ -219,12 +222,7 @@ const FAQ = () => {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('')
     const [tweets, setTweets] = useState(dummy_data);
-    const [check, setCheck] = useState(false)
-
-    const isCheck = (e) => {
-        setCheck(true);
-    } 
-
+    const [answer, setAnswer] = useState('')
 
     const openModalHandler = (e) => {
       setIsOpen(!isOpen)
@@ -237,7 +235,6 @@ const FAQ = () => {
     const openQuestions = (e) => {
           setQopen(e);
           setClick(!click);
-
     }
 
     const handleChangeTitle = (e) => {
@@ -248,16 +245,21 @@ const FAQ = () => {
         setContent(e.target.value)
       }
 
+    const handleChangeAnswer = (e) => {
+        setAnswer(e.target.value)
+    }
+
     const handleButtonClick = (e) => {
 
         if(title !== '' && content !== ''){
-        const tweet = {
-            id: shortid(),
-            username: 'sehyeon',
-            password: '123',
-            main_content: title,
-            sub_content: content,
-            updatedAt: new Date().toLocaleDateString('ko-KR')
+            const tweet = {
+                id: shortid(),
+                username: 'sehyeon',
+                password: '123',
+                main_content: title,
+                sub_content: content,
+                answer: answer,
+                updatedAt: new Date().toLocaleDateString('ko-KR')
         };
 
         const newTweets = [tweet, ...tweets]
@@ -265,7 +267,14 @@ const FAQ = () => {
         }
     }
 
+    const handleButtonClick2 = (e) => {
+    }
 
+
+    const clear = () => {
+        setTitle('')
+        setContent('')
+    }
 
 
     const list = [
@@ -330,11 +339,14 @@ const FAQ = () => {
                     <h2 className="head">질문을 등록해 주세요!</h2>
                     <div className="q_container">
                         <div>
-                            <input placeholder="질문 제목을 입력하세요" type='text' onChange={handleChangeTitle}></input>
+                            <input placeholder=" 제목을 입력하세요" type='text' onChange={handleChangeTitle} value={title}></input>
                         </div>
                         <div className="text">
-                            <textarea placeholder="답변을 입력하세요." onChange={handleChangeContent}></textarea>
-                            <button className="button2" onClick={handleButtonClick}>등록</button>
+                            <textarea placeholder="내용을 입력하세요." onChange={handleChangeContent} value={content}></textarea>
+                            <button className="button2" onClick={() => {
+                                handleButtonClick();
+                                clear()
+                            }}>등록</button>
                         </div>
                     </div>
                     
@@ -355,8 +367,10 @@ const FAQ = () => {
                                             <button>수정</button>
                                             <button>삭제</button>
                                         </div>
-                                        <FontAwesomeIcon icon={faCheck} className='check' />
-                                            
+                                        {el.answer !== '' ?
+                                        <FontAwesomeIcon icon={faCheck} className='check' /> :
+                                        <FontAwesomeIcon icon={faCheck} className='check unCheck' />}
+                                        
                                     </div>
                                     {qopen === el.id && click ?
                                      <div className="answer_container">
@@ -364,15 +378,22 @@ const FAQ = () => {
                                             Q. {el.sub_content}
                                         </div>
                                         <div>
+                                            {el.answer !== '' ?
                                             <div className="answer_head">
                                                 A. {el.answer}
-                                            </div>
+                                            </div> :
+                                            undefined
+                                            }
                                         </div>
+                                        {el.answer === ''?
                                         <div className="text">
-                                            <textarea placeholder="답변을 입력하세요."></textarea>
+                                            <textarea placeholder="답변을 입력하세요." onChange={handleChangeAnswer}></textarea>
                                             <button className="button2" onClick={() =>{
+                                                handleButtonClick2()
                                             }}>등록</button>
                                         </div>
+                                         :
+                                        undefined}
                                      </div> :
                                       undefined}
                                 </div>
@@ -380,7 +401,7 @@ const FAQ = () => {
                         })}
                 </div>
             </div>
-            <Footer />
+            <Footer /> 
         </Wrapper>
         </>
     )
