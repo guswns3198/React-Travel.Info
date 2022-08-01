@@ -1,22 +1,15 @@
 import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRight } from "@fortawesome/free-solid-svg-icons";
-// import { Link } from "react-router-dom";
 import React from "react";
 import Korea from "../img/korea.jpeg";
 import Vegas from "../img/vegas.jpeg";
 import Greece from "../img/greece.jpeg";
 import Borakay from "../img/borakay.jpeg";
-// import Left from "../img/left.png";
-// import Right from "../img/right.png";
-// import ImgOne from "../assets/flight.jpeg"
 import Footer from "./Footer"
-// import { Routes } from "react-router-dom";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const Section = styled.section`
  width: 100vw;
- height: 100vh;
+ height: 100h;
  display: flex;
  background-color: #FEFBF6;
 
@@ -209,13 +202,6 @@ const Section = styled.section`
       color: #29D493;
     }
 
-    .imageTab {
-      padding-top: 50px;
-      display: flex;
-      height: 50vh;
-      justify-content: space-between;
-    }
-
   }
   `;
 
@@ -280,18 +266,19 @@ const Main = () => {
               </div>
 
               <div className="selectMenu">
-              <span onClick={TabFirst}>오늘의 BEST 여행지</span>
+              <span>오늘의 BEST 여행지</span>
               <span>항공사가 추천하는 여행지</span>
               <span>얼리버드 할인 특가</span>
               </div>
 
-              <div className="imageTab">
               <TabFirst />
-              </div>
 
+              {/* <TabTwo /> */}
           </div>
+
               
     </Section>
+    
     {/* <Footer /> */}
     </>
   )
@@ -299,89 +286,60 @@ const Main = () => {
 
 export default Main;
 
-const Divs = styled.div`
-  position: relative;
-  width: 100%;
-  height: 100%;
-  /* background-color: royalblue; */
-  flex-wrap: wrap;
-  display: flex;
-  grid-template-columns: repeat(4, 65px);
-  grid-auto-rows: 65px;
-  grid-gap: 5px;
-  justify-content: center;
-  
-  .tab1 {
+const Wrapper = styled.div`
+
+
+  .tabs {
+    width: 80vw;
+    height: 60%;
     display: flex;
-    width: 100%;
-    height: 200%;
+    align-items: center;
+    position: absolute;
+    left: 3%;
   }
+  
 
   img {
-    padding: 0px 10px;
-    width: 30%;
-    height: 50%;
-    cursor: pointer;
+    width: 80%;
+    height: 80%;
   }
 
 
   .word {
-    height: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;;
-    flex-wrap: wrap;
-    z-index: 1;
-  }
-
-  span {
-    position: relative;
-    right: 10%;
-    bottom: 13%;
-    padding: 0px 20px;
-    font-size: 1.8rem;
+    display: inline-block;
+    font-size: 1.5rem;
     font-weight: bold;
-    font-style: italic;
-    color: gray;
-    top: 40%;
+    position: relative;
+    left: 20%;
   }
 
-  span:hover {
-    color: green;
+  .word:hover {
     cursor: pointer;
+    color: green;
   }
-
-  /* .word2 {
-    position: relative;
-    left: 3%;
-  }
-
-  .word3 {
-    position: relative;
-    left: 12%;
-  } */
 `;
 
 
 const TabFirst = () => {
   return (
     <>
-    <Divs>
-      <div className="tab1">
+    <Wrapper>
+
+      <div className="tabs">
+      <div className="tabchildren">
       <img className="one" src="https://img.modetour.com/eagle/photoimg/11093/bfile/636977501233548972.JPG" />
-      
-
-      <img className="two" src="https://img.modetour.com/eagle/photoimg/46312/Bfile/636529164558136991.png" />
-      
-
-      <img className="three" src="https://img.modetour.com/eagle/photoimg/45599/bfile/637176301868413310.png" />
+      <span className="word">세부 2박 3일</span>
       </div>
 
-      <div className="word">
-        <span>세부 2박 3일</span>
-        <span className="word2">라오스 4박 5일</span>
-        <span className="word3">싱가포르 3박 4일</span>
+      <div className="tabchildren">
+      <img className="two" src="https://img.modetour.com/eagle/photoimg/46312/Bfile/636529164558136991.png" />
+      <span className="word">라오스 4박 5일</span>
+      </div>
+
+      <div className="tabchildren">
+      <img className="three" src="https://img.modetour.com/eagle/photoimg/45599/bfile/637176301868413310.png" />
+      <span className="word">싱가포르 3박 4일</span>
+      </div>
       </div>
 
       {/* <div className="phaseTwo">
@@ -400,7 +358,37 @@ const TabFirst = () => {
         <span className="word6">호주 4박 5일</span>
       </div> */}
 
-    </Divs>
+    </Wrapper>
+
+    </>
+  )
+}
+
+
+const TabTwo = () => {
+  return (
+    <>
+    <Wrapper>
+
+      <div className="tabs">
+      <div className="tabchildren">
+      <img className="one" src="https://img.modetour.com/eagle/photoimg/11093/bfile/636977501233548972.JPG" />
+      <span className="word">가나다라</span>
+      </div>
+
+      <div className="tabchildren">
+      <img className="two" src="https://img.modetour.com/eagle/photoimg/46312/Bfile/636529164558136991.png" />
+      <span className="word">마바사</span>
+      </div>
+
+      <div className="tabchildren">
+      <img className="three" src="https://img.modetour.com/eagle/photoimg/45599/bfile/637176301868413310.png" />
+      <span className="word">아자차카 타파하</span>
+      </div>
+      </div>
+
+
+    </Wrapper>
 
     </>
   )
