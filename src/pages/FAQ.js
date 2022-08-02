@@ -223,7 +223,8 @@ const FAQ = () => {
     const [content, setContent] = useState('');
     const [tweets, setTweets] = useState(dummy_data);
     const [answer, setAnswer] = useState('');
-    const [coment, setComent] = useState(false);
+    const [arr, setArr] = useState([]);
+
 
     const openModalHandler = (e) => {
       setIsOpen(!isOpen)
@@ -254,7 +255,7 @@ const FAQ = () => {
 
         if(title !== '' && content !== ''){
             const tweet = {
-                id: shortid(),
+                id: tweets.length -2 ,
                 username: 'sehyeon',
                 password: '123',
                 main_content: title,
@@ -267,12 +268,12 @@ const FAQ = () => {
         }
     }
 
-
     const handleButtonClick2 = () => {
-        setComent(true)
+
+        setArr([...arr, answer])
     }
 
-
+    console.log(arr)
 
     const clear = () => {
         setTitle('')
@@ -372,7 +373,7 @@ const FAQ = () => {
                                             <button>수정</button>
                                             <button>삭제</button>
                                         </div>
-                                        {el.answer !== undefined || coment === true ?
+                                        {el.answer !== undefined || arr[el.id] !== undefined ?
                                         <FontAwesomeIcon icon={faCheck} className='check' /> :
                                         <FontAwesomeIcon icon={faCheck} className='check unCheck' />}
                                         
@@ -389,17 +390,17 @@ const FAQ = () => {
                                             </div> :
                                                 undefined
                                             }
-                                            {coment && el.answer === undefined ?
+                                            {arr[el.id] !== undefined && el.answer === undefined ?
                                             <div className="answer_head">
-                                                A. {answer}
+                                                A. {arr[el.id]}
                                             </div> :
                                             undefined}
                                         </div>
-                                        {el.answer === undefined && coment === false ?
+                                        {el.answer === undefined && arr[el.id] === undefined ?
                                         <div className="text">
                                             <textarea placeholder="답변을 입력하세요." onChange={handleChangeAnswer}></textarea>
                                             <button className="button2" onClick={() =>{
-                                                handleButtonClick2()
+                                                handleButtonClick2();
                                             }}>등록</button>
                                         </div>
                                          :
