@@ -1,11 +1,12 @@
 import styled from "styled-components";
-import React from "react";
+import React, { useState } from "react";
 import Korea from "../img/korea.jpeg";
 import Vegas from "../img/vegas.jpeg";
 import Greece from "../img/greece.jpeg";
 import Borakay from "../img/borakay.jpeg";
 import Footer from "./Footer"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 
 const Section = styled.section`
  width: 100vw;
@@ -210,6 +211,21 @@ const Section = styled.section`
 //이미지 슬라이드 크기 1100px X 480px
 
 const Main = () => {
+  
+  const [change, setChange] = useState(1);
+
+  const handleButtonClick = () => {
+    setChange(1)
+  }
+
+  const handleButtonClick2= () => {
+    setChange(2)
+  }
+
+  // const handleButtonClick3= () => {
+  //   setChange(3)
+  // }
+  
   return (
     <>
     
@@ -266,12 +282,13 @@ const Main = () => {
               </div>
 
               <div className="selectMenu">
-              <span>오늘의 BEST 여행지</span>
-              <span>항공사가 추천하는 여행지</span>
+              <span onClick={handleButtonClick}>오늘의 BEST 여행지</span>
+              <span onClick={handleButtonClick2}>항공사가 추천하는 여행지</span>
               <span>얼리버드 할인 특가</span>
               </div>
-
-              <TabFirst />
+              {change === 1 ? <TabFirst /> : undefined}
+              {change === 2 ? <TabTwo /> : undefined}
+              {/* {change === 3 ? <TabThird /> : undefined} */}
 
               {/* <TabTwo /> */}
           </div>
@@ -326,6 +343,7 @@ const TabFirst = () => {
     <Wrapper>
 
       <div className="tabs">
+
       <div className="tabchildren">
       <img className="one" src="https://img.modetour.com/eagle/photoimg/11093/bfile/636977501233548972.JPG" />
       <span className="word">세부 2박 3일</span>
@@ -340,23 +358,8 @@ const TabFirst = () => {
       <img className="three" src="https://img.modetour.com/eagle/photoimg/45599/bfile/637176301868413310.png" />
       <span className="word">싱가포르 3박 4일</span>
       </div>
+
       </div>
-
-      {/* <div className="phaseTwo">
-      <img className="one" src="https://img.modetour.com/eagle/photoimg/11503/bfile/636083433620810469.jpg" />
-      
-
-      <img className="two" src="https://img.modetour.com/eagle/photoimg/68416/Bfile/637885533250812251.JPG" />
-      
-
-      <img className="three" src="https://img.modetour.com/eagle/photoimg/61864/bfile/636616499875933305.png" />
-      </div>
-
-      <div className="word">
-        <span className="word4">이탈리아 9박 10일</span>
-        <span className="word5">몽골 5박 6일</span>
-        <span className="word6">호주 4박 5일</span>
-      </div> */}
 
     </Wrapper>
 
@@ -373,17 +376,17 @@ const TabTwo = () => {
       <div className="tabs">
       <div className="tabchildren">
       <img className="one" src="https://img.modetour.com/eagle/photoimg/11093/bfile/636977501233548972.JPG" />
-      <span className="word">가나다라</span>
+      <span className="word">이탈리아 9박 10일</span>
       </div>
 
       <div className="tabchildren">
       <img className="two" src="https://img.modetour.com/eagle/photoimg/46312/Bfile/636529164558136991.png" />
-      <span className="word">마바사</span>
+      <span className="word">몽골 5박 6일</span>
       </div>
 
       <div className="tabchildren">
       <img className="three" src="https://img.modetour.com/eagle/photoimg/45599/bfile/637176301868413310.png" />
-      <span className="word">아자차카 타파하</span>
+      <span className="word">호주 4박 5일</span>
       </div>
       </div>
 
