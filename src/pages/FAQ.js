@@ -274,10 +274,10 @@ const FAQ = () => {
                 el.answer = answer
             }
         })
-
-        setQopen(false)
+        setTweets([...tweets])
 
     }
+
 
     const clear = () => {
         setTitle('')
