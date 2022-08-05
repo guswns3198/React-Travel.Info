@@ -59,7 +59,7 @@ const Nav_item = () =>{
         <ul className="navbar_menu">
             <li>국내여행</li>
             <li>해외여행</li>
-            <li className="event">이벤트</li>
+            <li className="event"><Link to = '/Event'>이벤트</Link></li>
             <li><Link to='/FAQ'>FAQ</Link></li>
             <div className="navbar_links">
             <a href="https://github.com/guswns3198/React-Travel.Info" target='_blank'>
