@@ -9,9 +9,11 @@ const Event = () => {
     
     return (
         <>
+        
         <Style>
         </Style>
-        <Footer/> 
+
+        <Footer/>
         </>
     )
 }

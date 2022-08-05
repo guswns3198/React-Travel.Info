@@ -7,10 +7,9 @@ import Borakay from "../img/borakay.jpeg";
 import Footer from "./Footer"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-// test.youngha
 const Section = styled.section`
  width: 100vw;
- height: 100h;
+ height: 100vh;
  display: flex;
  background-color: #FEFBF6;
 
@@ -208,7 +207,7 @@ const Section = styled.section`
 
 
 
-//이미지 슬라이드 크기 1100px X 480px
+// 이미지 슬라이드 크기 1100px X 480px
 
 const Main = () => {
   
@@ -222,9 +221,9 @@ const Main = () => {
     setChange(2)
   }
 
-  // const handleButtonClick3= () => {
-  //   setChange(3)
-  // }
+  const handleButtonClick3= () => {
+    setChange(3)
+  }
   
   return (
     <>
@@ -284,19 +283,19 @@ const Main = () => {
               <div className="selectMenu">
               <span onClick={handleButtonClick}>오늘의 BEST 여행지</span>
               <span onClick={handleButtonClick2}>항공사가 추천하는 여행지</span>
-              <span>얼리버드 할인 특가</span>
+              <span onClick={handleButtonClick3}>얼리버드 할인 특가</span>
               </div>
               {change === 1 ? <TabFirst /> : undefined}
               {change === 2 ? <TabTwo /> : undefined}
-              {/* {change === 3 ? <TabThird /> : undefined} */}
+              {change === 3 ? <TabThree /> : undefined}
 
-              {/* <TabTwo /> */}
+              
           </div>
 
               
+      <Footer />
     </Section>
     
-    {/* <Footer /> */}
     </>
   )
 }
@@ -307,27 +306,23 @@ const Wrapper = styled.div`
 
 
   .tabs {
-    width: 80vw;
-    height: 60%;
+    height: 40vh;
     display: flex;
-    align-items: center;
-    position: absolute;
-    left: 3%;
+    justify-content: space-around;
   }
-  
 
   img {
-    width: 80%;
-    height: 80%;
+    width: 280px;
+    height: 250px;
+    padding-top: 10px;
   }
 
 
   .word {
-    display: inline-block;
-    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    font-size: 1.4rem;
     font-weight: bold;
-    position: relative;
-    left: 20%;
   }
 
   .word:hover {
@@ -375,18 +370,48 @@ const TabTwo = () => {
 
       <div className="tabs">
       <div className="tabchildren">
-      <img className="one" src="https://img.modetour.com/eagle/photoimg/11093/bfile/636977501233548972.JPG" />
-      <span className="word">이탈리아 9박 10일</span>
+      <img className="one" src="https://img.modetour.com/eagle/photoimg/26090/Bfile/The%20Magellan%20Sutera%20(Resort)%202a.jpg" />
+      <span className="word">코타키나발루 3박 5일</span>
       </div>
 
       <div className="tabchildren">
-      <img className="two" src="https://img.modetour.com/eagle/photoimg/46312/Bfile/636529164558136991.png" />
-      <span className="word">몽골 5박 6일</span>
+      <img className="two" src="https://img.modetour.com/eagle/photoimg/23273/Bfile/635737695951882259.jpg" />
+      <span className="word">동유럽 3국 9일</span>
       </div>
 
       <div className="tabchildren">
-      <img className="three" src="https://img.modetour.com/eagle/photoimg/45599/bfile/637176301868413310.png" />
+      <img className="three" src="https://img.modetour.com/eagle/photoimg/61864/bfile/636616499875933305.png" />
       <span className="word">호주 4박 5일</span>
+      </div>
+      </div>
+
+
+    </Wrapper>
+
+    </>
+  )
+}
+
+
+const TabThree = () => {
+  return (
+    <>
+    <Wrapper>
+
+      <div className="tabs">
+      <div className="tabchildren">
+      <img className="one" src="https://img.modetour.com/eagle/photoimg/47065/bfile/635845591029588663.png" />
+      <span className="word">미서부 10일</span>
+      </div>
+
+      <div className="tabchildren">
+      <img className="two" src="https://img.modetour.com/eagle/photoimg/11432/Bfile/636506698134733051.png" />
+      <span className="word">스페인 9일</span>
+      </div>
+
+      <div className="tabchildren">
+      <img className="three" src="https://img.modetour.com/eagle/photoimg/68416/Bfile/637885533237833819.JPG" />
+      <span className="word">몽골 6일</span>
       </div>
       </div>
 
