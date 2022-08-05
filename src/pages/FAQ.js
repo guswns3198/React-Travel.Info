@@ -186,9 +186,9 @@ const ModalBtn = styled.div`
         display:flex;
     }
 
-    .0{
-        border: 10px solid black;
-    }
+    /* .0{
+        border: 10px solid red;
+    } */
 
     .btn{
         border: 5px solid black;
@@ -278,7 +278,6 @@ const FAQ = () => {
 
     }
 
-
     const clear = () => {
         setTitle('')
         setContent('')
@@ -307,7 +306,6 @@ const FAQ = () => {
             a[i].style.background = 'gray';
         }
     }
-
 
 
 
