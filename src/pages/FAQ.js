@@ -4,7 +4,6 @@ import Footer from "../components/Footer";
 import dummy_data from "../dummy/dummy_data"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
-import shortid from "shortid";
 
 const Wrapper = styled.div`
     height: 75vh;
@@ -138,9 +137,6 @@ const Wrapper = styled.div`
           opacity: 1;
         }
       }
-
-
-
 `
 const ModalBackdrop = styled.div`
   position: fixed;
@@ -185,10 +181,6 @@ const ModalBtn = styled.div`
         list-style: none;
         display:flex;
     }
-
-    /* .0{
-        border: 10px solid red;
-    } */
 
     .btn{
         border: 5px solid black;
@@ -278,6 +270,13 @@ const FAQ = () => {
 
     }
 
+    const handleDeleteButton = (e) => {
+        const deletetweet = tweets.filter((el)=>{
+           return el.id !== e
+        })
+        setTweets(deletetweet)
+    }
+
     const clear = () => {
         setTitle('')
         setContent('')
@@ -319,14 +318,14 @@ const FAQ = () => {
                     <ul className="modal_item">
                     {list.map((el,index) =>{
                         return <li className='btn'
-                                key={index}
-                                id={el.id}
-                                onClick={() =>{
-                                    openModalHandler();
-                                    choice(el.id);
-                                    handleColor(el.id);
-                                    }}>
-                                    {el.name}</li>
+                            key={index}
+                            id={el.id}
+                            onClick={() =>{
+                                openModalHandler();
+                                choice(el.id);
+                                handleColor(el.id);
+                                }}>
+                                {el.name}</li>
                     })}
                     </ul>
                 </div>
@@ -373,7 +372,9 @@ const FAQ = () => {
                                         </div>
                                         <div className="button">
                                             <button>수정</button>
-                                            <button>삭제</button>
+                                            <button onClick={() => {
+                                                handleDeleteButton(el.id)
+                                            }}>삭제</button>
                                         </div>
                                         {el.answer !== undefined ?
                                         <FontAwesomeIcon icon={faCheck} className='check' /> :

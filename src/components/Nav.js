@@ -131,10 +131,6 @@ const Nav = () => {
     return setopen(!open)
   }
 
-  // useEffect(() =>{
-  //   console.log(open)
-  // },[open])
-
   return (
     <>
     <Wrapper className="hi">
@@ -146,7 +142,7 @@ const Nav = () => {
       <ul className="navbar_menu">
             <li>국내여행</li>
             <li>해외여행</li>
-            <li className="event"><Link to='/Event'>이벤트</Link></li>
+            <li><Link to='/Event' className="event">이벤트</Link></li>
             <li><Link to='/FAQ'>FAQ</Link></li>
         </ul>
 
