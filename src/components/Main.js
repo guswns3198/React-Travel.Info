@@ -13,7 +13,6 @@ const Section = styled.section`
  height: 100h;
  display: flex;
  background-color: #FEFBF6;
- overflow-x: hidden;
 
  .flight {
   color: #3330E4;

@@ -49,6 +49,7 @@ const Wrapper = styled.div`
     .container{
         display: flex;
         justify-content: center;
+        height: 100vh;
     }
     .QNA{
         margin: 30px;
@@ -185,9 +186,9 @@ const ModalBtn = styled.div`
         display:flex;
     }
 
-    .0{
-        border: 10px solid black;
-    }
+    /* .0{
+        border: 10px solid red;
+    } */
 
     .btn{
         border: 5px solid black;
@@ -223,7 +224,6 @@ const FAQ = () => {
     const [content, setContent] = useState('');
     const [tweets, setTweets] = useState(dummy_data);
     const [answer, setAnswer] = useState('');
-    const [arr, setArr] = useState([]);
 
 
     const openModalHandler = (e) => {
@@ -255,7 +255,7 @@ const FAQ = () => {
 
         if(title !== '' && content !== ''){
             const tweet = {
-                id: tweets.length -2 ,
+                id: tweets.length ,
                 username: 'sehyeon',
                 password: '123',
                 main_content: title,
@@ -268,11 +268,15 @@ const FAQ = () => {
         }
     }
 
-    const handleButtonClick2 = () => {
+    const handleButtonClick2 = (e) => {
+        tweets.map(el => {
+            if(el.id === e){
+                el.answer = answer
+            }
+        })
+        setTweets([...tweets])
 
-        setArr([...arr, answer])
     }
-    console.log(arr)
 
     const clear = () => {
         setTitle('')
@@ -371,7 +375,7 @@ const FAQ = () => {
                                             <button>수정</button>
                                             <button>삭제</button>
                                         </div>
-                                        {el.answer !== undefined || arr[el.id] !== undefined ?
+                                        {el.answer !== undefined ?
                                         <FontAwesomeIcon icon={faCheck} className='check' /> :
                                         <FontAwesomeIcon icon={faCheck} className='check unCheck' />}
                                         
@@ -388,17 +392,12 @@ const FAQ = () => {
                                             </div> :
                                                 undefined
                                             }
-                                            {arr[el.id] !== undefined && el.answer === undefined ?
-                                            <div className="answer_head">
-                                                A. {arr[el.id]}
-                                            </div> :
-                                            undefined}
                                         </div>
-                                        {el.answer === undefined && arr[el.id] === undefined ?
+                                        {el.answer === undefined ?
                                         <div className="text">
                                             <textarea placeholder="답변을 입력하세요." onChange={handleChangeAnswer}></textarea>
                                             <button className="button2" onClick={() =>{
-                                                handleButtonClick2();
+                                                handleButtonClick2(el.id);
                                             }}>등록</button>
                                         </div>
                                          :
