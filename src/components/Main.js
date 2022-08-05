@@ -6,6 +6,9 @@ import Greece from "../img/greece.jpeg";
 import Borakay from "../img/borakay.jpeg";
 import Footer from "./Footer"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Event from "../pages/Event";
+import { Link } from "react-router-dom";
+import { faDisplay } from "@fortawesome/free-solid-svg-icons";
 
 const Section = styled.section`
  width: 100vw;
@@ -18,12 +21,16 @@ const Section = styled.section`
     font-weight: bold;
     font-size: 2rem;
     padding-bottom: 10px;
+    text-decoration: none;
  }
  .flight2 {
   color: #513252;
     font-weight: bold;
     font-size: 1.3rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    justify-content: center;
+    position: relative;
+    left: 10%;
  }
 
  nav {
@@ -38,7 +45,7 @@ const Section = styled.section`
   border-right: 1px solid gray;
   background-color: #FEFBF6;
 
-  @media (max-width: 1350px) {
+  @media (max-width: 1150px) {
       display: none;
   }
  }
@@ -88,6 +95,8 @@ const Section = styled.section`
     font-weight: bold;
     font-size: 2rem;
     padding-bottom: 10px;
+    position: relative;
+    left: 10%;
  }
 
  .star2 {
@@ -206,7 +215,6 @@ const Section = styled.section`
   `;
 
 
-
 // 이미지 슬라이드 크기 1100px X 480px
 
 const Main = () => {
@@ -232,12 +240,16 @@ const Main = () => {
 
           <nav>
               <div className="minisection">
-                <span className="flight">초특가 항공권</span>
-                <span className="flight2">대한민국 최저가</span>
+                <Link to="/Event" style={{ textDecoration: "none"}}>
+                <div className="flight">초특가 항공권</div>
+                <div className="flight2">대한민국 최저가</div>
+                </Link>
               </div>
               <div className="minisection2">
-                <span className="star">별보러 몽골</span>
-                <span className="star2">최대 10만원 즉시할인</span>
+              <Link to="/Event" style={{ textDecoration: "none"}}>
+                <div className="star">별보러 몽골</div>
+                <div className="star2">최대 10만원 즉시할인</div>
+              </Link>
               </div>
           </nav>
 
