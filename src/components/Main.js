@@ -7,10 +7,10 @@ import Borakay from "../img/borakay.jpeg";
 import Footer from "./Footer"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-// test.youngha
+
 const Section = styled.section`
  width: 100vw;
- height: 100h;
+ height: 100vh;
  display: flex;
  background-color: #FEFBF6;
 
@@ -208,7 +208,7 @@ const Section = styled.section`
 
 
 
-//이미지 슬라이드 크기 1100px X 480px
+// 이미지 슬라이드 크기 1100px X 480px
 
 const Main = () => {
   
@@ -295,8 +295,8 @@ const Main = () => {
 
               
     </Section>
+      <Footer />
     
-    {/* <Footer /> */}
     </>
   )
 }
