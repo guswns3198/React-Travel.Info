@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <>
     <Wrapper>
-    <div>@Copyright HJ,SH. All right reserved.</div>
+    <div>@Copyright HJ,SH,YH. All right reserved.</div>
     </Wrapper>
     </>
   )
