@@ -272,7 +272,6 @@ const FAQ = () => {
 
         setArr([...arr, answer])
     }
-
     console.log(arr)
 
     const clear = () => {
@@ -303,7 +302,6 @@ const FAQ = () => {
             a[i].style.background = 'gray';
         }
     }
-
 
 
 
