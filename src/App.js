@@ -3,6 +3,7 @@ import Main from './components/Main';
 import Nav from './components/Nav';
 import Jeju from './pages/Jeju';
 import FAQ from './pages/FAQ';
+import Event from "./pages/Event";
 import "./App.css";
 
 
@@ -15,6 +16,7 @@ function App() {
                 <Route path="/" element={<Main />} />
                 <Route path="/FAQ" element={<FAQ />} />
                 <Route path="/Jeju" element={<Jeju />} />
+                <Route path="/Event" element={<Event />} />
               </Routes>
         </Router>
     </div>
