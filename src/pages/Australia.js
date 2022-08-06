@@ -83,7 +83,7 @@ const Div = styled.div`
   }
 `;
 
-const Cebu = () => {
+const Australia = () => {
   const [value, onChange] = useState(new Date());
 
   return (
@@ -91,7 +91,7 @@ const Cebu = () => {
     <Wrapper>
     
     <div className="section1">
-    <span className="name">[도전최저가] 세부 솔레아 리조트 4일/5일</span>
+    <span className="name">┃베스트셀러/노옵션┃호주/뉴질랜드 남북섬 10일</span>
 
     <span className="cal">
     <Calendar onChange={onChange} value={value}/>
@@ -99,9 +99,9 @@ const Cebu = () => {
     </div>
 
     <div className="section2">
-    <img className="one" src="https://img.modetour.com/eagle/photoimg/11093/bfile/636977501233548972.JPG" />
+    <img className="three" src="https://img.modetour.com/eagle/photoimg/61864/bfile/636616499875933305.png" />
     <span className="pick">MD Pick!</span>
-    <span>세부 가성비 최강 솔레아</span>
+    <span>[프리미엄 국적기 대한항공으로 떠나는 호주/뉴질랜드]</span>
       
     </div>
 
@@ -120,4 +120,4 @@ const Cebu = () => {
   )
 }
 
-export default Cebu;
+export default Australia;

@@ -356,18 +356,22 @@ const TabFirst = () => {
       <div className="tabchildren">
       <Link to="/Cebu" style={{textDecoration: "none"}}>
       <img className="one" src="https://img.modetour.com/eagle/photoimg/11093/bfile/636977501233548972.JPG" />
-      <span className="word">세부 2박 3일</span>
+      <span className="word">세부 4박 5일</span>
       </Link>
       </div>
 
       <div className="tabchildren">
+      <Link to="/Laos" style={{textDecoration: "none"}}>  
       <img className="two" src="https://img.modetour.com/eagle/photoimg/46312/Bfile/636529164558136991.png" />
-      <span className="word">라오스 4박 5일</span>
+      <span className="word">라오스 5박 6일</span>
+      </Link>
       </div>
 
       <div className="tabchildren">
+      <Link to="/Singapore" style={{ textDecoration: "none"}}>
       <img className="three" src="https://img.modetour.com/eagle/photoimg/45599/bfile/637176301868413310.png" />
-      <span className="word">싱가포르 3박 4일</span>
+      <span className="word">싱가포르 5박 6일</span>
+      </Link>
       </div>
 
       </div>
@@ -386,18 +390,24 @@ const TabTwo = () => {
 
       <div className="tabs">
       <div className="tabchildren">
+      <Link to="/KotaKinabalu" style={{ textDecoration: "none"}}>
       <img className="one" src="https://img.modetour.com/eagle/photoimg/26090/Bfile/The%20Magellan%20Sutera%20(Resort)%202a.jpg" />
       <span className="word">코타키나발루 3박 5일</span>
+      </Link>
       </div>
 
       <div className="tabchildren">
+      <Link to="/EastEurope" style={{ textDecoration: "none"}}>
       <img className="two" src="https://img.modetour.com/eagle/photoimg/23273/Bfile/635737695951882259.jpg" />
       <span className="word">동유럽 3국 9일</span>
+      </Link>
       </div>
 
       <div className="tabchildren">
+      <Link to="/Australia" style={{ textDecoration: "none"}}>
       <img className="three" src="https://img.modetour.com/eagle/photoimg/61864/bfile/636616499875933305.png" />
       <span className="word">호주 4박 5일</span>
+      </Link>
       </div>
       </div>
 
@@ -416,18 +426,24 @@ const TabThree = () => {
 
       <div className="tabs">
       <div className="tabchildren">
+      <Link to="/LasVegas" style={{ textDecoration: "none"}}>
       <img className="one" src="https://img.modetour.com/eagle/photoimg/47065/bfile/635845591029588663.png" />
       <span className="word">미서부 10일</span>
+      </Link>
       </div>
 
       <div className="tabchildren">
+      <Link to="/Spain" style={{ textDecoration: "none"}}>
       <img className="two" src="https://img.modetour.com/eagle/photoimg/11432/Bfile/636506698134733051.png" />
       <span className="word">스페인 9일</span>
+      </Link>
       </div>
 
       <div className="tabchildren">
+      <Link to="/Mongolia" style={{ textDecoration: "none"}}>
       <img className="three" src="https://img.modetour.com/eagle/photoimg/68416/Bfile/637885533237833819.JPG" />
       <span className="word">몽골 6일</span>
+      </Link>
       </div>
       </div>
 
