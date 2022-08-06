@@ -144,7 +144,7 @@ const Nav = () => {
       </div>
 
       <ul className="navbar_menu">
-            <li>국내여행</li>
+            <li><Link to='/InKorea'>국내여행</Link></li>
             <li><Link to='/Overseas'>해외여행</Link></li>
             <li><Link to='/Event' className="event">이벤트</Link></li>
             <li><Link to='/FAQ'>FAQ</Link></li>
