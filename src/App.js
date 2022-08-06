@@ -4,7 +4,9 @@ import Nav from './components/Nav';
 import Jeju from './pages/Jeju';
 import FAQ from './pages/FAQ';
 import Event from "./pages/Event";
+import InKorea from "./pages/InKorea";
 import Overseas from "./pages/Overseas";
+
 import Cebu from "./pages/Cebu";
 import Laos from "./pages/Laos";
 import Singapore from "./pages/Singapore";
@@ -27,6 +29,7 @@ function App() {
                 <Route path="/FAQ" element={<FAQ />} />
                 <Route path="/Jeju" element={<Jeju />} />
                 <Route path="/Event" element={<Event />} />
+                <Route path="/InKorea" element={<InKorea />} />
                 <Route path="/Overseas" element={<Overseas />} />
 
                 <Route path="/Cebu" element={<Cebu />} />
