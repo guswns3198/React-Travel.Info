@@ -100,7 +100,7 @@ const Cebu = () => {
 
     <div className="section2">
     <img className="one" src="https://img.modetour.com/eagle/photoimg/11093/bfile/636977501233548972.JPG" />
-    <span className="pick">MD Pick!</span>
+    <span className="pick">MD Pick !</span>
     <span>세부 가성비 최강 솔레아</span>
       
     </div>

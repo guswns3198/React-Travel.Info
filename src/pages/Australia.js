@@ -100,7 +100,7 @@ const Australia = () => {
 
     <div className="section2">
     <img className="three" src="https://img.modetour.com/eagle/photoimg/61864/bfile/636616499875933305.png" />
-    <span className="pick">MD Pick!</span>
+    <span className="pick">MD Pick !</span>
     <span>[프리미엄 국적기 대한항공으로 떠나는 호주/뉴질랜드]</span>
       
     </div>

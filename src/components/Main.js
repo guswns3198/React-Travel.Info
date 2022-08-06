@@ -6,9 +6,9 @@ import Greece from "../img/greece.jpeg";
 import Borakay from "../img/borakay.jpeg";
 import Footer from "./Footer"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Event from "../pages/Event";
+// import Event from "../pages/Event";
 import { Link } from "react-router-dom";
-import { faDisplay } from "@fortawesome/free-solid-svg-icons";
+// import { faDisplay } from "@fortawesome/free-solid-svg-icons";
 
 const Section = styled.section`
  width: 100vw;

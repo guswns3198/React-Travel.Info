@@ -100,7 +100,7 @@ const LasVegas = () => {
 
     <div className="section2">
     <img className="one" src="https://img.modetour.com/eagle/photoimg/47065/bfile/635845591029588663.png" />
-    <span className="pick">MD Pick!</span>
+    <span className="pick">MD Pick !</span>
     <span>[두근두근 미서부 홈쇼핑 따라잡기]</span>
       
     </div>
