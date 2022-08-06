@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Event from "../pages/Event";
 import { Link } from "react-router-dom";
 import { faDisplay } from "@fortawesome/free-solid-svg-icons";
+import Cota from "../pages/Cota";
 
 const Section = styled.section`
  width: 100vw;
@@ -327,6 +328,7 @@ const Wrapper = styled.div`
     width: 280px;
     height: 250px;
     padding-top: 10px;
+    cursor: pointer;
   }
 
 
@@ -341,6 +343,7 @@ const Wrapper = styled.div`
     cursor: pointer;
     color: green;
   }
+
 `;
 
 
@@ -352,8 +355,10 @@ const TabFirst = () => {
       <div className="tabs">
 
       <div className="tabchildren">
+      <Link to="/Cota" style={{textDecoration: "none"}}>
       <img className="one" src="https://img.modetour.com/eagle/photoimg/11093/bfile/636977501233548972.JPG" />
       <span className="word">세부 2박 3일</span>
+      </Link>
       </div>
 
       <div className="tabchildren">

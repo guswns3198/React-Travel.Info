@@ -4,6 +4,7 @@ import Nav from './components/Nav';
 import Jeju from './pages/Jeju';
 import FAQ from './pages/FAQ';
 import Event from "./pages/Event";
+import Cota from "./pages/Cota";
 import "./App.css";
 
 
@@ -17,6 +18,7 @@ function App() {
                 <Route path="/FAQ" element={<FAQ />} />
                 <Route path="/Jeju" element={<Jeju />} />
                 <Route path="/Event" element={<Event />} />
+                <Route path="/Cota" element={<Cota />} />
               </Routes>
         </Router>
     </div>
