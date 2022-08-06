@@ -100,7 +100,7 @@ const KotaKinabalu = () => {
 
     <div className="section2">
     <img className="one" src="https://img.modetour.com/eagle/photoimg/26090/Bfile/The%20Magellan%20Sutera%20(Resort)%202a.jpg" />
-    <span className="pick">MD Pick!</span>
+    <span className="pick">MD Pick !</span>
     <span>#진에어 #프리미엄LCC #코타키나발루 #초특급마젤란</span>
       
     </div>

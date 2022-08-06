@@ -100,7 +100,7 @@ const Singapore = () => {
 
     <div className="section2">
     <img className="three" src="https://img.modetour.com/eagle/photoimg/45599/bfile/637176301868413310.png" />
-    <span className="pick">MD Pick!</span>
+    <span className="pick">MD Pick !</span>
     <span>1일자유/노쇼핑</span>
       
     </div>

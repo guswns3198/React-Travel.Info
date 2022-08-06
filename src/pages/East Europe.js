@@ -100,7 +100,7 @@ const EastEurope = () => {
 
     <div className="section2">
     <img className="two" src="https://img.modetour.com/eagle/photoimg/23273/Bfile/635737695951882259.jpg" />
-    <span className="pick">MD Pick!</span>
+    <span className="pick">MD Pick !</span>
     <span>[품격있게 떠나는 동유럽+독일]</span>
       
     </div>

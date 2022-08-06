@@ -100,7 +100,7 @@ const Mongolia = () => {
 
     <div className="section2">
     <img className="three" src="https://img.modetour.com/eagle/photoimg/68416/Bfile/637885533237833819.JPG" />
-    <span className="pick">MD Pick!</span>
+    <span className="pick">MD Pick !</span>
     <span>가장 많이 찾는 여행지 남고비 사막투어 + 테렐지 국립공원</span>
       
     </div>

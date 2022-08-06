@@ -100,7 +100,7 @@ const Spain = () => {
 
     <div className="section2">
     <img className="two" src="https://img.modetour.com/eagle/photoimg/11432/Bfile/636506698134733051.png" />
-    <span className="pick">MD Pick!</span>
+    <span className="pick">MD Pick !</span>
     <span>[전세계 HIT 가우디 투어 포함]</span>
       
     </div>

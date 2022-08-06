@@ -100,7 +100,7 @@ const Laos = () => {
 
     <div className="section2">
     <img className="two" src="https://img.modetour.com/eagle/photoimg/46312/Bfile/636529164558136991.png" />
-    <span className="pick">MD Pick!</span>
+    <span className="pick">MD Pick !</span>
     <span>[할인의성지_라오스]</span>
       
     </div>
