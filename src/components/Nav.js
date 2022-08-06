@@ -19,6 +19,10 @@ const Wrapper = styled.div`
   background-size: cover;
   user-select:none;
 
+  li {
+    cursor: pointer;
+  }
+
   .git{
     font-size: 200%;
   }
@@ -141,7 +145,7 @@ const Nav = () => {
 
       <ul className="navbar_menu">
             <li>국내여행</li>
-            <li>해외여행</li>
+            <li><Link to='/Overseas'>해외여행</Link></li>
             <li><Link to='/Event' className="event">이벤트</Link></li>
             <li><Link to='/FAQ'>FAQ</Link></li>
         </ul>
