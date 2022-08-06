@@ -83,7 +83,7 @@ const Div = styled.div`
   }
 `;
 
-const Cebu = () => {
+const Singapore = () => {
   const [value, onChange] = useState(new Date());
 
   return (
@@ -91,7 +91,7 @@ const Cebu = () => {
     <Wrapper>
     
     <div className="section1">
-    <span className="name">[도전최저가] 세부 솔레아 리조트 4일/5일</span>
+    <span className="name">(1일자유/노쇼핑) 싱가포르 5일/6일 </span>
 
     <span className="cal">
     <Calendar onChange={onChange} value={value}/>
@@ -99,9 +99,9 @@ const Cebu = () => {
     </div>
 
     <div className="section2">
-    <img className="one" src="https://img.modetour.com/eagle/photoimg/11093/bfile/636977501233548972.JPG" />
+    <img className="three" src="https://img.modetour.com/eagle/photoimg/45599/bfile/637176301868413310.png" />
     <span className="pick">MD Pick!</span>
-    <span>세부 가성비 최강 솔레아</span>
+    <span>1일자유/노쇼핑</span>
       
     </div>
 
@@ -120,4 +120,4 @@ const Cebu = () => {
   )
 }
 
-export default Cebu;
+export default Singapore;

@@ -83,7 +83,7 @@ const Div = styled.div`
   }
 `;
 
-const Cebu = () => {
+const EastEurope = () => {
   const [value, onChange] = useState(new Date());
 
   return (
@@ -91,7 +91,7 @@ const Cebu = () => {
     <Wrapper>
     
     <div className="section1">
-    <span className="name">[도전최저가] 세부 솔레아 리조트 4일/5일</span>
+    <span className="name">■노쇼핑/노옵션■ [Andante] 동유럽 3국 9일 (독일/체코/오스트리아) ★4성호텔★</span>
 
     <span className="cal">
     <Calendar onChange={onChange} value={value}/>
@@ -99,9 +99,9 @@ const Cebu = () => {
     </div>
 
     <div className="section2">
-    <img className="one" src="https://img.modetour.com/eagle/photoimg/11093/bfile/636977501233548972.JPG" />
+    <img className="two" src="https://img.modetour.com/eagle/photoimg/23273/Bfile/635737695951882259.jpg" />
     <span className="pick">MD Pick!</span>
-    <span>세부 가성비 최강 솔레아</span>
+    <span>[품격있게 떠나는 동유럽+독일]</span>
       
     </div>
 
@@ -120,4 +120,4 @@ const Cebu = () => {
   )
 }
 
-export default Cebu;
+export default EastEurope;
