@@ -68,6 +68,7 @@ const Event = () => {
     
     return (
         <>
+
         <Styles>
             <section className="e-mainArea">
                 {/*사이드바 영역 */}

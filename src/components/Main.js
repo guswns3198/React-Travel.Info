@@ -6,11 +6,13 @@ import Greece from "../img/greece.jpeg";
 import Borakay from "../img/borakay.jpeg";
 import Footer from "./Footer"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import Event from "../pages/Event";
+import { Link } from "react-router-dom";
+// import { faDisplay } from "@fortawesome/free-solid-svg-icons";
 
-// test.youngha
 const Section = styled.section`
  width: 100vw;
- height: 100h;
+ height: 100vh;
  display: flex;
  background-color: #FEFBF6;
 
@@ -19,12 +21,16 @@ const Section = styled.section`
     font-weight: bold;
     font-size: 2rem;
     padding-bottom: 10px;
+    text-decoration: none;
  }
  .flight2 {
   color: #513252;
     font-weight: bold;
     font-size: 1.3rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    justify-content: center;
+    position: relative;
+    left: 10%;
  }
 
  nav {
@@ -39,7 +45,7 @@ const Section = styled.section`
   border-right: 1px solid gray;
   background-color: #FEFBF6;
 
-  @media (max-width: 1350px) {
+  @media (max-width: 1150px) {
       display: none;
   }
  }
@@ -89,6 +95,8 @@ const Section = styled.section`
     font-weight: bold;
     font-size: 2rem;
     padding-bottom: 10px;
+    position: relative;
+    left: 10%;
  }
 
  .star2 {
@@ -207,8 +215,7 @@ const Section = styled.section`
   `;
 
 
-
-//이미지 슬라이드 크기 1100px X 480px
+// 이미지 슬라이드 크기 1100px X 480px
 
 const Main = () => {
   
@@ -222,9 +229,9 @@ const Main = () => {
     setChange(2)
   }
 
-  // const handleButtonClick3= () => {
-  //   setChange(3)
-  // }
+  const handleButtonClick3= () => {
+    setChange(3)
+  }
   
   return (
     <>
@@ -233,12 +240,16 @@ const Main = () => {
 
           <nav>
               <div className="minisection">
-                <span className="flight">초특가 항공권</span>
-                <span className="flight2">대한민국 최저가</span>
+                <Link to="/Event" style={{ textDecoration: "none"}}>
+                <div className="flight">초특가 항공권</div>
+                <div className="flight2">대한민국 최저가</div>
+                </Link>
               </div>
               <div className="minisection2">
-                <span className="star">별보러 몽골</span>
-                <span className="star2">최대 10만원 즉시할인</span>
+              <Link to="/Event" style={{ textDecoration: "none"}}>
+                <div className="star">별보러 몽골</div>
+                <div className="star2">최대 10만원 즉시할인</div>
+              </Link>
               </div>
           </nav>
 
@@ -284,19 +295,19 @@ const Main = () => {
               <div className="selectMenu">
               <span onClick={handleButtonClick}>오늘의 BEST 여행지</span>
               <span onClick={handleButtonClick2}>항공사가 추천하는 여행지</span>
-              <span>얼리버드 할인 특가</span>
+              <span onClick={handleButtonClick3}>얼리버드 할인 특가</span>
               </div>
               {change === 1 ? <TabFirst /> : undefined}
               {change === 2 ? <TabTwo /> : undefined}
-              {/* {change === 3 ? <TabThird /> : undefined} */}
+              {change === 3 ? <TabThree /> : undefined}
 
-              {/* <TabTwo /> */}
+              
           </div>
 
               
+      <Footer />
     </Section>
     
-    {/* <Footer /> */}
     </>
   )
 }
@@ -307,33 +318,31 @@ const Wrapper = styled.div`
 
 
   .tabs {
-    width: 80vw;
-    height: 60%;
+    height: 40vh;
     display: flex;
-    align-items: center;
-    position: absolute;
-    left: 3%;
+    justify-content: space-around;
   }
-  
 
   img {
-    width: 80%;
-    height: 80%;
+    width: 280px;
+    height: 250px;
+    padding-top: 10px;
+    cursor: pointer;
   }
 
 
   .word {
-    display: inline-block;
-    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    font-size: 1.4rem;
     font-weight: bold;
-    position: relative;
-    left: 20%;
   }
 
   .word:hover {
     cursor: pointer;
     color: green;
   }
+
 `;
 
 
@@ -345,18 +354,24 @@ const TabFirst = () => {
       <div className="tabs">
 
       <div className="tabchildren">
+      <Link to="/Cebu" style={{textDecoration: "none"}}>
       <img className="one" src="https://img.modetour.com/eagle/photoimg/11093/bfile/636977501233548972.JPG" />
-      <span className="word">세부 2박 3일</span>
+      <span className="word">세부 4박 5일</span>
+      </Link>
       </div>
 
       <div className="tabchildren">
+      <Link to="/Laos" style={{textDecoration: "none"}}>  
       <img className="two" src="https://img.modetour.com/eagle/photoimg/46312/Bfile/636529164558136991.png" />
-      <span className="word">라오스 4박 5일</span>
+      <span className="word">라오스 5박 6일</span>
+      </Link>
       </div>
 
       <div className="tabchildren">
+      <Link to="/Singapore" style={{ textDecoration: "none"}}>
       <img className="three" src="https://img.modetour.com/eagle/photoimg/45599/bfile/637176301868413310.png" />
-      <span className="word">싱가포르 3박 4일</span>
+      <span className="word">싱가포르 5박 6일</span>
+      </Link>
       </div>
 
       </div>
@@ -375,18 +390,60 @@ const TabTwo = () => {
 
       <div className="tabs">
       <div className="tabchildren">
-      <img className="one" src="https://img.modetour.com/eagle/photoimg/11093/bfile/636977501233548972.JPG" />
-      <span className="word">이탈리아 9박 10일</span>
+      <Link to="/KotaKinabalu" style={{ textDecoration: "none"}}>
+      <img className="one" src="https://img.modetour.com/eagle/photoimg/26090/Bfile/The%20Magellan%20Sutera%20(Resort)%202a.jpg" />
+      <span className="word">코타키나발루 3박 5일</span>
+      </Link>
       </div>
 
       <div className="tabchildren">
-      <img className="two" src="https://img.modetour.com/eagle/photoimg/46312/Bfile/636529164558136991.png" />
-      <span className="word">몽골 5박 6일</span>
+      <Link to="/EastEurope" style={{ textDecoration: "none"}}>
+      <img className="two" src="https://img.modetour.com/eagle/photoimg/23273/Bfile/635737695951882259.jpg" />
+      <span className="word">동유럽 3국 9일</span>
+      </Link>
       </div>
 
       <div className="tabchildren">
-      <img className="three" src="https://img.modetour.com/eagle/photoimg/45599/bfile/637176301868413310.png" />
+      <Link to="/Australia" style={{ textDecoration: "none"}}>
+      <img className="three" src="https://img.modetour.com/eagle/photoimg/61864/bfile/636616499875933305.png" />
       <span className="word">호주 4박 5일</span>
+      </Link>
+      </div>
+      </div>
+
+
+    </Wrapper>
+
+    </>
+  )
+}
+
+
+const TabThree = () => {
+  return (
+    <>
+    <Wrapper>
+
+      <div className="tabs">
+      <div className="tabchildren">
+      <Link to="/LasVegas" style={{ textDecoration: "none"}}>
+      <img className="one" src="https://img.modetour.com/eagle/photoimg/47065/bfile/635845591029588663.png" />
+      <span className="word">미서부 10일</span>
+      </Link>
+      </div>
+
+      <div className="tabchildren">
+      <Link to="/Spain" style={{ textDecoration: "none"}}>
+      <img className="two" src="https://img.modetour.com/eagle/photoimg/11432/Bfile/636506698134733051.png" />
+      <span className="word">스페인 9일</span>
+      </Link>
+      </div>
+
+      <div className="tabchildren">
+      <Link to="/Mongolia" style={{ textDecoration: "none"}}>
+      <img className="three" src="https://img.modetour.com/eagle/photoimg/68416/Bfile/637885533237833819.JPG" />
+      <span className="word">몽골 6일</span>
+      </Link>
       </div>
       </div>
 
