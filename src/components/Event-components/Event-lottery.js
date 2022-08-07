@@ -61,7 +61,7 @@ const EventLottery = () => {
                         </tr>
                         <tr>
                             <td>784</td>
-                            <td>하와이 하얏트리젠시 2박 숙박권 당첨자 발표</td>
+                            <td>닫힌 브랜치 테스트</td>
                             <td>2022.08.02</td>
                             <td>76</td>
                         </tr>
