@@ -1,13 +1,10 @@
 import styled from "styled-components";
 import Footer from '../components/Footer'
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import EventLottery from "../components/Event-components/Event-lottery";
-
-
-
+import {EndEvent_dummy_data} from "../dummy/event_dummy_data";
 
 const Styles = styled.div`
- height: 75vh;
  border: solid 3px black;
 
  .e-mainArea{
@@ -45,15 +42,53 @@ header{
     transition: 0.2s;
 }
 
+
 ul{
     list-style: none;
     border-bottom: solid black 1px; 
 }
+.eventContainer{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.greenCircle{
+  width : 15px;
+  height : 15px;
+  border-radius: 50%;
+  background-color: lightgreen;
+}
+
+.columBox{
+    display:flex;
+    flex-direction: column;
+}
+.eventList{
+    border: solid black 2px;
+}
+
 `
 
 
-const Event = () => {
 
+const Event = () => {
+   
+    // async function Load(){
+    //     let data = await import("../dummy/event_dummy_data");
+    //     // {IngEvent_dummy_data, EndEvent_dummy_data}
+    //     let EndEvent_dummy_data = data.EndEvent_dummy_data
+    //     console.log(EndEvent_dummy_data)
+
+    //     useEffect(()=>{
+    //         setEventDummies( EndEvent_dummy_data);
+    //     },[EndEvent_dummy_data])
+    // }
+
+    const [eventDummies, setEventDummies] = useState([])
+    // Load()
+    useEffect(()=>{
+        setEventDummies( EndEvent_dummy_data);
+    },[EndEvent_dummy_data])
 
     const [openlottery , setOpenLottery] = useState(true)
     
@@ -62,13 +97,12 @@ const Event = () => {
             return setOpenLottery(true);
         }
         else {
-            return setOpenLottery(false)
+            return setOpenLottery(false);
         }
     }
     
     return (
         <>
-
         <Styles>
             <section className="e-mainArea">
                 {/*사이드바 영역 */}
@@ -81,7 +115,6 @@ const Event = () => {
                     <button>{`예약확인&결제`}</button>
                 </article>
 
-
                 {/*이벤트 메인 영역 */}
                 <article className="e-intro">
                     {openlottery ? 
@@ -91,14 +124,32 @@ const Event = () => {
                             <li className = "subMenu">진행중인 이벤트</li>
                             <li className = "subMenu">종료된 이벤트</li>
                         </ul>
+                        <ul className="eventContainer">
+                        {eventDummies.map((el, idx)=>{
+                            return (    
+                                <li className = "eventList" key = {idx}>
+                                    <span className="columBox">  
+                                        
+                                            <img width = '340vw'src = {el.img}/>
+                                            <div>
+                                            <div className="greenCircle"></div>
+                                                {el.title}
+                                            </div>
+                                        
+                                    </span>
+                                    {el.startDate} - 
+                                    {el.endDate}
+                                </li>
+                            )
+                        })}
+                        </ul>
                         </>
 
                         : <EventLottery />}
                 </article>
-               
             </section>
         </Styles>
-        <Footer/> 
+        <Footer/>
         </>
     )
 }

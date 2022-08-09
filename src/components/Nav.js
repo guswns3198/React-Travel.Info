@@ -7,6 +7,7 @@ import Nav_item from "./Nav_item";
 import "../App.css";
 import { FaGithub } from "react-icons/fa";
 
+
 const Wrapper = styled.div`
   width: 100%;
   height: 15vh;
@@ -144,7 +145,6 @@ const Nav = () => {
       </div>
 
       <ul className="navbar_menu">
-
             <li><Link to='/InKorea'>국내여행</Link></li>
             <li><Link to='/Overseas'>해외여행</Link></li>
             <li><Link to='/Event' className="event">이벤트</Link></li>
