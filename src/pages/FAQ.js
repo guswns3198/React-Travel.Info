@@ -189,7 +189,6 @@ const ModalView = styled.div`
     font-size: 21px;
     white-space: pre;
     text-align: left;
-}
 `
 
 const ModalBtn = styled.div`
