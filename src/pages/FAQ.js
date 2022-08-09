@@ -315,9 +315,9 @@ const FAQ = () => {
     }
 
     const handleDeleteButton = (e) => { // 삭제버튼 , 아이디를 인자로 받아와서 해당아이디를 가진 컨테이너만 빼고 나머지를 리턴해주는 필터 함수
-        const deletetweet = tweets.filter((el)=>{
-           return el.id !== e
-        })
+        const deletetweet = tweets.filter( el =>
+            el.id !== e
+        )
         setTweets(deletetweet)
     }
 
@@ -331,7 +331,6 @@ const FAQ = () => {
             setTweets([...tweets])
         })
         setUpOpen(e)
-        console.log(upOpen)
     }
 
     const handleUpdateButton2 = (e) => { // 완료버튼을 누르면 실행되는 함수
@@ -474,7 +473,6 @@ const FAQ = () => {
                                                 </div>
                                                 }
                                             </div>
-                                            {/* <>hihi</> */}
                                         </div>
                                         <div className="button">
                                             {click && qopen === el.id && !update ? 
@@ -505,9 +503,6 @@ const FAQ = () => {
                                         <div className="answer_head line">
                                             Q. {el.sub_content}
                                         </div>:
-                                        // <div>
-                                        // <textarea className="upcontent" placeholder="내용을 입력하세요." onChange={handleUpdateContent} value={upContent}></textarea>
-                                        // </div>
                                         undefined
                                         }
                                         <div>
