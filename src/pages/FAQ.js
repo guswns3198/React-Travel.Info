@@ -297,19 +297,24 @@ const FAQ = () => {
             if(title === ''){
                 alert('제목을 입력해주세요!!')
             }
-            if(content === ''){
+            if(content === '' && title !== ''){
                 alert('내용을 입력해주세요!!')
             }
         }
     }
 
     const handleButtonClick2 = (e) => { // 답변을 등록했을때 기존 더미 배열의 답변부분만 재할당해주는 함수
-        tweets.map(el => {
-            if(el.id === e){
-                el.answer = answer
-            }
-        })
-        setTweets([...tweets])
+        if(answer !== ''){
+            tweets.map(el => {
+                if(el.id === e){
+                    el.answer = answer
+                }
+            })
+            setTweets([...tweets])
+        }
+        else{
+            alert('답변을 입력하세요!!')
+        }
 
     }
 
@@ -350,7 +355,7 @@ const FAQ = () => {
          if(upTitle === ''){
             alert('제목을 입력해주세요!!')
          }
-         if(upContent === ''){
+         if(upContent === '' && upTitle !== ''){
             alert('내용을 입력해주세요!!')
          }
         }
