@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import dummy_data from "../dummy/dummy_data"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
+// 주석
 
 const Wrapper = styled.div`
     height: 75vh;
