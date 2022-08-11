@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Footer from '../components/Footer'
 import {useEffect, useState} from 'react'
 import EventLottery from "../components/Event-components/Event-lottery";
-import {EndEvent_dummy_data} from "../dummy/event_dummy_data";
+// import {EndEvent_dummy_data} from "../dummy/event_dummy_data";
 
 const Styles = styled.div`
  border: solid 3px black;
@@ -72,24 +72,19 @@ ul{
 
 
 const Event = () => {
-   
-    // async function Load(){
-    //     let data = await import("../dummy/event_dummy_data");
-    //     // {IngEvent_dummy_data, EndEvent_dummy_data}
-    //     let EndEvent_dummy_data = data.EndEvent_dummy_data
-    //     console.log(EndEvent_dummy_data)
-
-    //     useEffect(()=>{
-    //         setEventDummies( EndEvent_dummy_data);
-    //     },[EndEvent_dummy_data])
-    // }
-
+        async function Load(e){
+            let data = await import("../dummy/event_dummy_data");
+            // {IngEvent_dummy_data, EndEvent_dummy_data}
+            if(e.target.textContent === "진행중인 이벤트"){
+                let Event_dummy_data = data.EndEvent_dummy_data
+                return setEventDummies( Event_dummy_data);
+            } else {
+                let Event_dummy_data = data.IngEvent_dummy_data
+                return setEventDummies( Event_dummy_data);
+            }
+        }
+    
     const [eventDummies, setEventDummies] = useState([])
-    // Load()
-    useEffect(()=>{
-        setEventDummies( EndEvent_dummy_data);
-    },[EndEvent_dummy_data])
-
     const [openlottery , setOpenLottery] = useState(true)
     
     const handleToLottery = (e) => {
@@ -121,15 +116,14 @@ const Event = () => {
                         <>
                         <header>{`>이벤트안내`}</header>
                         <ul className="tabMenu">
-                            <li className = "subMenu">진행중인 이벤트</li>
-                            <li className = "subMenu">종료된 이벤트</li>
+                            <li className = "subMenu" onClick={e => Load(e)}>진행중인 이벤트</li>
+                            <li className = "subMenu" onClick={e => Load(e)}>종료된 이벤트</li>
                         </ul>
                         <ul className="eventContainer">
                         {eventDummies.map((el, idx)=>{
                             return (    
                                 <li className = "eventList" key = {idx}>
                                     <span className="columBox">  
-                                        
                                             <img width = '340vw'src = {el.img}/>
                                             <div>
                                             <div className="greenCircle"></div>
