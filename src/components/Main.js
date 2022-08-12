@@ -304,8 +304,8 @@ const Main = () => {
           </div>
 
               
-      <Footer />
     </Section>
+      <Footer />
     
     </>
   )
