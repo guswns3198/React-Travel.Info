@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import dummy_data from "../dummy/dummy_data"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
+// 주석 두번쨰 주석
 
 const Wrapper = styled.div`
     height: 75vh;
@@ -304,24 +305,19 @@ const FAQ = () => {
             if(title === ''){
                 alert('제목을 입력해주세요!!')
             }
-            if(content === '' && title !== ''){
+            if(content === ''){
                 alert('내용을 입력해주세요!!')
             }
         }
     }
 
     const handleButtonClick2 = (e) => { // 답변을 등록했을때 기존 더미 배열의 답변부분만 재할당해주는 함수
-        if(answer !== ''){
-            tweets.map(el => {
-                if(el.id === e){
-                    el.answer = answer
-                }
-            })
-            setTweets([...tweets])
-        }
-        else{
-            alert('답변을 입력해주세요!!')
-        }
+        tweets.map(el => {
+            if(el.id === e){
+                el.answer = answer
+            }
+        })
+        setTweets([...tweets])
 
     }
 
@@ -362,7 +358,7 @@ const FAQ = () => {
          if(upTitle === ''){
             alert('제목을 입력해주세요!!')
          }
-         if(upContent === '' && upTitle !== ''){
+         if(upContent === ''){
             alert('내용을 입력해주세요!!')
          }
         }
