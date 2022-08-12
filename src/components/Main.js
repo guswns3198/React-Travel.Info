@@ -5,7 +5,6 @@ import Vegas from "../img/vegas.jpeg";
 import Greece from "../img/greece.jpeg";
 import Borakay from "../img/borakay.jpeg";
 import Footer from "./Footer"
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import Event from "../pages/Event";
 import { Link } from "react-router-dom";
 
@@ -216,7 +215,7 @@ const Section = styled.section`
 
 // 이미지 슬라이드 크기 1100px X 480px
 
-const Main = () => {
+const Main = ( {dispatch}) => {
   
   const [change, setChange] = useState(1);
 
@@ -231,7 +230,13 @@ const Main = () => {
   const handleButtonClick3= () => {
     setChange(3)
   }
-  
+  const handleToEvent = (e) => {
+    if(e.target.className ==="flight" || e.target.className ==="flight2" ) {
+      dispatch({type: "loadUrl",  payload: "https://img.modetour.com/modetour/2021/main/thum/01_220721.jpg"})
+    } else if(e.target.className ==="star" || e.target.className ==="star2" ){
+      dispatch({type: "loadUrl",  payload: "https://img.modetour.com/modetour/2021/main/thum/04_220714.jpg"})
+    }
+  }
   return (
     <>
     
@@ -240,14 +245,14 @@ const Main = () => {
           <nav>
               <div className="minisection">
                 <Link to="/Event" style={{ textDecoration: "none"}}>
-                <div className="flight">초특가 항공권</div>
-                <div className="flight2">대한민국 최저가</div>
+                <div onClick = {(e) => handleToEvent(e)} className="flight">초특가 항공권</div>
+                <div onClick = {(e) => handleToEvent(e)} className="flight2">대한민국 최저가</div>
                 </Link>
               </div>
               <div className="minisection2">
               <Link to="/Event" style={{ textDecoration: "none"}}>
-                <div className="star">별보러 몽골</div>
-                <div className="star2">최대 10만원 즉시할인</div>
+                <div onClick = {(e) => handleToEvent(e)} className="star">별보러 몽골</div>
+                <div onClick = {(e) => handleToEvent(e)} className="star2">최대 10만원 즉시할인</div>
               </Link>
               </div>
           </nav>
