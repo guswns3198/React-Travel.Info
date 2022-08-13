@@ -10,7 +10,7 @@ height: 75vh;
 border: 5px solid black;
 
 .region_tap{
-    height: 100%;
+    height: 15%;
     display: flex;
     justify-content: space-around;
     padding-top : 10px;
@@ -40,7 +40,7 @@ const InKorea = () => {
     const [regionIndex, setRegionIndex] = useState(null)
 
     const dummy_region = [
-        {region : '서울', id:0},
+        {region : '서울', id:0, select:<Seoul />},
         {region : '경기', id:1},
         {region : '인천', id:2},
         {region : '강원', id:3},
@@ -57,7 +57,7 @@ const InKorea = () => {
         setClick(!click)
 
     }
-//설마 ?
+
     return (
         <>
             <Wrapper>
@@ -65,14 +65,21 @@ const InKorea = () => {
                     {dummy_region.map((el, key) => {
                         return (
                             <div key={key}>
-                                <div className='region_list' onClick={() => {
-                                    handleRegionClick(key)
-                                }}>{el.region}
+                            <div>
+                                    <div className='region_list' onClick={() => {
+                                        handleRegionClick(key)
+                                    }}>{el.region}
                                 </div>
                             </div>
+                                <div key={key}>
+                                    {regionIndex === el.id ? el.select : undefined}
+                                </div>
+                                </div>
                         )
                     })}
                 </div>
+
+
             </Wrapper>
         <Footer />
         </>
