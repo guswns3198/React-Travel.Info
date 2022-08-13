@@ -9,6 +9,12 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons";
 const Wrapper = styled.div`
     height: 75vh;
 
+    .pageNation{
+        display: flex;
+        justify-content: center;
+
+    }
+
     .username{
         text-align: center;
     }
@@ -75,7 +81,7 @@ const Wrapper = styled.div`
     .container{
         display: flex;
         justify-content: center;
-        height: 105vh;
+        height: 120vh;
     }
     .QNA{
         margin: 30px;
@@ -241,6 +247,7 @@ const FAQ = () => {
     const [upTitle, setUpTitle] = useState(''); // 수정하는 제목을 저장해주는애
     const [upContent, setUpContent] = useState(''); // 수정하는 내용을 저장해주는애
 
+
     const openModalHandler = () => { // 모달버튼을 누르면 실행될 함수 (열렸니 닫혔니)
       setIsOpen(!isOpen)
     };
@@ -376,6 +383,15 @@ const FAQ = () => {
             a[i].style.background = 'gray';
         }
     }   // 하지만 모달창이 닫히고나면 그이후에 이 함수때문에 hover가 먹통이 되서 얘는 다시 손봐야됨
+
+    let arr = []
+
+    const pageNation = (count) => {
+        for(let i = 1 ; i <= count ; i++){
+            arr.push(i)
+        }
+        return arr
+    }
 
     const list = [ // 모달들의 더미데이터
         { id:0, name: '여행상품 예약은 어떻게 하나요 ?',
@@ -529,6 +545,10 @@ const FAQ = () => {
                         })}
                 </div>
             </div>
+            {pageNation(Math.ceil(tweets.length / 5))}
+                <div className="pageNation">{arr.map(el => {
+                    return el
+                })}</div>
             <Footer /> 
         </Wrapper>
         </>
