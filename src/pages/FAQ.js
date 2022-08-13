@@ -12,7 +12,6 @@ const Wrapper = styled.div`
     .pageNation{
         display: flex;
         justify-content: center;
-
     }
 
     .username{

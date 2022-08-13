@@ -1,4 +1,5 @@
 import shortId from 'shortid';
+import Seoul from '../pages/Seoul';
 
 const dummy_data = [
     {
