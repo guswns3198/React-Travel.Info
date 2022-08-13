@@ -1,4 +1,5 @@
 import shortId from 'shortid';
+import Seoul from '../pages/Seoul';
 
 const dummy_data = [
     {
@@ -20,5 +21,7 @@ const dummy_data = [
         answer: '안돼 못바꿔줘 돌아가'
     }
 ]
+
+
 
 export default dummy_data;
