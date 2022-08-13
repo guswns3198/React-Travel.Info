@@ -66,26 +66,39 @@ ul{
 .eventList{
     border: solid black 2px;
 }
-
+.mainImg{
+    height: 75vh;
+    width:75vw;
+}
 `
 
 
 
-const Event = () => {
+const Event = ({state}) => {
         async function Load(e){
             let data = await import("../dummy/event_dummy_data");
             // {IngEvent_dummy_data, EndEvent_dummy_data}
             if(e.target.textContent === "진행중인 이벤트"){
                 let Event_dummy_data = data.EndEvent_dummy_data
+                if(isFirstRender === false){
+                    setIsFirstRender(true)
+                }
+                setIsFirstRender(false)
                 return setEventDummies( Event_dummy_data);
             } else {
                 let Event_dummy_data = data.IngEvent_dummy_data
+                if(isFirstRender === false){
+                    setIsFirstRender(true)
+                }
+                setIsFirstRender(false)
                 return setEventDummies( Event_dummy_data);
             }
+            
         }
     
     const [eventDummies, setEventDummies] = useState([])
     const [openlottery , setOpenLottery] = useState(true)
+    const [isFirstRender, setIsFirstRender] = useState(true)
     
     const handleToLottery = (e) => {
         if(e.target.textContent === '이벤트 안내'){
@@ -98,6 +111,7 @@ const Event = () => {
     
     return (
         <>
+        {/* {console.log(state)} */}
         <Styles>
             <section className="e-mainArea">
                 {/*사이드바 영역 */}
@@ -114,13 +128,15 @@ const Event = () => {
                 <article className="e-intro">
                     {openlottery ? 
                         <>
-                        <header>{`>이벤트안내`}</header>
+                        <header onClick={() => setIsFirstRender(true)}>{`>이벤트안내`}</header>
                         <ul className="tabMenu">
                             <li className = "subMenu" onClick={e => Load(e)}>진행중인 이벤트</li>
                             <li className = "subMenu" onClick={e => Load(e)}>종료된 이벤트</li>
                         </ul>
                         <ul className="eventContainer">
-                        {eventDummies.map((el, idx)=>{
+                        {isFirstRender 
+                        ? <img className="mainImg" src = {state}/> 
+                        : eventDummies.map((el, idx)=>{
                             return (    
                                 <li className = "eventList" key = {idx}>
                                     <span className="columBox">  
@@ -129,7 +145,6 @@ const Event = () => {
                                             <div className="greenCircle"></div>
                                                 {el.title}
                                             </div>
-                                        
                                     </span>
                                     {el.startDate} - 
                                     {el.endDate}
