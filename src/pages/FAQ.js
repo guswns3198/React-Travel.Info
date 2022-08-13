@@ -4,7 +4,6 @@ import Footer from "../components/Footer";
 import dummy_data from "../dummy/dummy_data"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
-// 주석 두번쨰 주석
 
 const Wrapper = styled.div`
     height: 75vh;
@@ -15,7 +14,7 @@ const Wrapper = styled.div`
     }
 
     .username{
-        text-align: center;
+        text-align: cmenter;
     }
 
     .uptitle{
@@ -135,7 +134,6 @@ const Wrapper = styled.div`
         color: green;
         height: 40px;
         width: 40px;
-        // display: none;
         padding-left: 10px;
         }
 
@@ -263,6 +261,7 @@ const FAQ = () => {
         if(upOpen){
             alert('수정을 완료 해주세요 !!')
         }
+
     }
 
     const handleChangeTitle = (e) => { // 인풋창에 입력한값을 그대로 저장해주는 함수
@@ -354,10 +353,10 @@ const FAQ = () => {
         clear()
         }
         else{
-         if(upTitle === ''){
+         if(upTitle === '' && upContent === ''){
             alert('제목을 입력해주세요!!')
          }
-         if(upContent === ''){
+         if(upContent === '' && upTitle !== ''){
             alert('내용을 입력해주세요!!')
          }
         }
