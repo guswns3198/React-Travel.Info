@@ -32,6 +32,12 @@ border: 5px solid black;
     height: 10vh;
 }
 
+.maps {
+    position: absolute;
+    top: 30%;
+    left: 3%;
+}
+
 `
 
 const InKorea = () => {
@@ -71,7 +77,7 @@ const InKorea = () => {
                                     }}>{el.region}
                                 </div>
                             </div>
-                                <div key={key}>
+                                <div key={key} className="maps">
                                     {regionIndex === el.id ? el.select : undefined}
                                 </div>
                                 </div>
