@@ -1,4 +1,4 @@
-/*global kakao*/ 
+/*global kakao*/
 import styled from "styled-components";
 import Footer from '../components/Footer';
 import React, { useEffect } from 'react';
