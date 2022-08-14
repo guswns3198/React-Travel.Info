@@ -1,4 +1,4 @@
-/*global kakao*/ 
+/*global kakao*/
 import styled from "styled-components";
 import Footer from '../components/Footer';
 import React, { useEffect } from 'react';
@@ -43,6 +43,7 @@ const Castle = () => {
     `
 
   return (
+    <>
     <Wrapper>
     <div className="castle" id="map" style={{width:"400px", height:"300px"}}></div>
     
@@ -54,7 +55,7 @@ const Castle = () => {
       원래 태조는 고려시대 남경(南京)의 이궁(離宮:宮井洞 일대) 터를 마음에 두고 있었으나 새로운 왕조의 뻗어나는 기세를 수용하기에는 너무 좁은 터전이라 하여 그 남쪽에 따로 자리잡았던 것이다. 10월에 한양으로 도읍을 일단 옮긴 태조는 수도 건설에 박차를 가하여, 12월 3일에 궁궐과 종묘를 짓겠다고 산천신(山川神)에게 고사하고, 이튿날 개기(開基)하여 주야로 작업을 진행, 1395년 9월에 낙성을 보게 되었다. 명칭은 《시경》의 ‘군자만년 개이경복(君子萬年 介爾景福)’이란 글귀에서 따서 경복궁이라 하였다. 궁내에 준성된 전각은 총 390여 칸이었다.
       </p>
     </Wrapper>
-
+    </>
   )
 }
 
