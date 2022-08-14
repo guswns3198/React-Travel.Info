@@ -17,19 +17,25 @@ border: 5px solid black;
 }
 
 .region_list{
-    background-color: #C1D5A4;
+    background-color: #D4F6CC;
     padding: 15px;
     font-size: 150%;
     width: 100px;
     text-align: center;
     font-weight: bold;
+    cursor: pointer;
+    border-radius: 20px;
 }
 
-.screen{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 10vh;
+.region_list:hover{
+    background-color: #76BA99;
+    padding: 15px;
+    font-size: 150%;
+    width: 100px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 20px;
 }
 
 .maps {
@@ -71,16 +77,19 @@ const InKorea = () => {
                     {dummy_region.map((el, key) => {
                         return (
                             <div key={key}>
-                            <div>
+
+                                <div>
                                     <div className='region_list' onClick={() => {
-                                        handleRegionClick(key)
+                                    handleRegionClick(key)
                                     }}>{el.region}
+                                    </div>
                                 </div>
-                            </div>
+
                                 <div key={key} className="maps">
                                     {regionIndex === el.id ? el.select : undefined}
                                 </div>
-                                </div>
+
+                            </div>
                         )
                     })}
                 </div>
