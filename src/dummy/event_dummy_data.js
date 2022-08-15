@@ -1,14 +1,7 @@
 import shortId from 'shortid';
 
 const IngEvent_dummy_data = [
-    {
-        id: shortId(),
-        img: "http://img.modetour.co.kr/promotion20/11676/banner_11676.jpg",
-        title: "설레는 여행 또 다른 즐거움 면세점 혜택!",
-        startDate: "2022-07-25",
-        endDate: "2022-08-31"
-
-    },
+   
     {
         id: shortId(),
         img: "http://img.modetour.co.kr/promotion20/11810/event_catch_220630.jpg",
@@ -63,11 +56,10 @@ const IngEvent_dummy_data = [
     },
     {
         id: shortId(),
-        img: "http://img.modetour.co.kr/promotion20/11676/banner_11676.jpg",
-        title: "설레는 여행 또 다른 즐거움 면세점 혜택!",
-        startDate: "2022-07-25",
-        endDate: "2022-08-31"
-
+        img: "http://img.modetour.co.kr/promotion20/11810/event_catch_220630.jpg",
+        title: "병행수입 없는 100% 공식명품, 캐치패션",
+        startDate: "2022-07-10",
+        endDate: "2022-10-19"
     },
     {
         id: shortId(),
@@ -76,51 +68,7 @@ const IngEvent_dummy_data = [
         startDate: "2022-07-10",
         endDate: "2022-10-19"
     },
-    {
-        id: shortId(),
-        img: "http://img.modetour.co.kr/promotion20/11676/banner_11676.jpg",
-        title: "설레는 여행 또 다른 즐거움 면세점 혜택!",
-        startDate: "2022-07-25",
-        endDate: "2022-08-31"
-
-    },
-    {
-        id: shortId(),
-        img: "http://img.modetour.co.kr/promotion20/11810/event_catch_220630.jpg",
-        title: "병행수입 없는 100% 공식명품, 캐치패션",
-        startDate: "2022-07-10",
-        endDate: "2022-10-19"
-    },
-    {
-        id: shortId(),
-        img: "http://img.modetour.co.kr/promotion20/11676/banner_11676.jpg",
-        title: "설레는 여행 또 다른 즐거움 면세점 혜택!",
-        startDate: "2022-07-25",
-        endDate: "2022-08-31"
-
-    },
-    {
-        id: shortId(),
-        img: "http://img.modetour.co.kr/promotion20/11810/event_catch_220630.jpg",
-        title: "병행수입 없는 100% 공식명품, 캐치패션",
-        startDate: "2022-07-10",
-        endDate: "2022-10-19"
-    },
-    {
-        id: shortId(),
-        img: "http://img.modetour.co.kr/promotion20/11676/banner_11676.jpg",
-        title: "설레는 여행 또 다른 즐거움 면세점 혜택!",
-        startDate: "2022-07-25",
-        endDate: "2022-08-31"
-
-    },
-    {
-        id: shortId(),
-        img: "http://img.modetour.co.kr/promotion20/11810/event_catch_220630.jpg",
-        title: "병행수입 없는 100% 공식명품, 캐치패션",
-        startDate: "2022-07-10",
-        endDate: "2022-10-19"
-    }
+ 
     
 ]
 
