@@ -13,11 +13,10 @@ import Jeollado from "./Jeollado_Tourlist_Destination/Jeollado";
 
 const Wrapper = styled.div`
 
-height: 75vh;
-border: 5px solid black;
+height: 80vh;
+/* border: 5px solid black; */
 
 .region_tap{
-    height: 15%;
     display: flex;
     justify-content: space-around;
     padding-top : 10px;
