@@ -28,7 +28,7 @@ const Halla_mountain = () => {
         var container = document.getElementById('map');
         var options = {
             center: new kakao.maps.LatLng(33.364605, 126.537303),
-            level: 5
+            level: 8
         };
 
         var map = new kakao.maps.Map(container, options);
