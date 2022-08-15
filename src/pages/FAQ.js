@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import dummy_data from "../dummy/dummy_data"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import shortid from "shortid";
 
 const Wrapper = styled.div`
     height: 75vh;
@@ -250,6 +251,7 @@ const FAQ = () => {
     const [upTitle, setUpTitle] = useState(''); // 수정하는 제목을 저장해주는애
     const [upContent, setUpContent] = useState(''); // 수정하는 내용을 저장해주는애
     const [page, setPage] = useState(1);
+    const [arr, setArr] = useState([1])
 
 
     const openModalHandler = () => { // 모달버튼을 누르면 실행될 함수 (열렸니 닫혔니)
@@ -262,7 +264,6 @@ const FAQ = () => {
 
     const openQuestions = (e) => { // 특정 질문을 눌렀을때 해당된 창만 열리게 해주는 함수
         setQopen(e);
-        
     }
 
     const handleChangeTitle = (e) => { // 인풋창에 입력한값을 그대로 저장해주는 함수
@@ -295,8 +296,9 @@ const FAQ = () => {
                 main_content: title,
                 sub_content: content,
                 updatedAt: new Date().toLocaleDateString('ko-KR'),
-                page: Math.ceil((tweets.length + 1) /5)
+                page: 1
         };
+        pageNation(Math.ceil((tweets.length + 1) / 5))
 
         const newTweets = [tweet, ...tweets]
         setTweets(newTweets)
@@ -389,16 +391,31 @@ const FAQ = () => {
         }
     }   // 하지만 모달창이 닫히고나면 그이후에 이 함수때문에 hover가 먹통이 되서 얘는 다시 손봐야됨
 
-    let arr = []
+    let array = []
 
-    const pageNation = (count) => {
-        for(let i = 1 ; i <= count ; i++){
-            arr.push(i)
-        }
-        return arr
-    }
     
-    pageNation(Math.ceil(tweets.length / 5))
+    const pageNation = (count) => {
+
+        for(let i = 1 ; i <= count ; i++){
+            array.push(i);
+        }
+        setArr(array)
+
+        if(count > 1){
+            // tweets[tweets[0].id].page += 1
+            for(let i = 4 ; i < tweets.length ; i++){
+
+                if(tweets[i].page === count){
+                    continue
+                }
+                tweets[i].page += 1
+            }
+        }
+
+        // console.log(tweets[tweets.length-1].page)
+        // console.log(tweets[tweets.length-1].page)
+
+    }
 
     const list = [ // 모달들의 더미데이터
         { id:0, name: '여행상품 예약은 어떻게 하나요 ?',
@@ -463,9 +480,10 @@ const FAQ = () => {
                         </div>
                         <div className="text">
                             <textarea placeholder="내용을 입력하세요." onChange={handleChangeContent} value={content}></textarea>
-                            <button onClick={() => {
+                            <button onClick={(e) => {
                                 handleButtonClick();
                                 clear()
+                                e.stopPropagation();
                             }}>등록</button>
                         </div>
                     </div>
@@ -480,6 +498,7 @@ const FAQ = () => {
                                                 <>
                                                 <div onClick={() => {
                                                     openQuestions(el.id);
+                                                    // console.log(el.page)
                                                     qopen === el.id ? setClick(!click) : setClick(click)
                                                 }} className='title'
                                                 > {el.main_content}</div>
@@ -551,9 +570,9 @@ const FAQ = () => {
                         })}
                 </div>
             </div>
-                <div className="pageNation">{arr.map((el, key) => {
+                <div className="pageNation">{arr.map((el) => {
                     return (
-                        <div key={key}>
+                        <div key={shortid()}>
                             <span className="num_list" onClick={() => {
                                 setPage(el);
                             }}>{el}</span>
