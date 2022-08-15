@@ -262,7 +262,7 @@ const FAQ = () => {
 
     const openQuestions = (e) => { // 특정 질문을 눌렀을때 해당된 창만 열리게 해주는 함수
         setQopen(e);
-        setClick(!click);
+        
     }
 
     const handleChangeTitle = (e) => { // 인풋창에 입력한값을 그대로 저장해주는 함수
@@ -312,13 +312,17 @@ const FAQ = () => {
     }
 
     const handleButtonClick2 = (e) => { // 답변을 등록했을때 기존 더미 배열의 답변부분만 재할당해주는 함수
-        tweets.map(el => {
-            if(el.id === e){
-                el.answer = answer
-            }
-        })
-        setTweets([...tweets])
-
+        if(answer === ''){
+            alert('답변을 등록해주세요!!')
+        }
+        else{
+            tweets.map(el => {
+                if(el.id === e){
+                    el.answer = answer
+                }
+            })
+            setTweets([...tweets])
+        }
     }
 
     const handleDeleteButton = (e) => { // 삭제버튼 , 아이디를 인자로 받아와서 해당아이디를 가진 컨테이너만 빼고 나머지를 리턴해주는 필터 함수
@@ -369,6 +373,7 @@ const FAQ = () => {
         setContent('')
         setUpContent('')
         setUpTitle('')
+        setAnswer('')
     }
 
     const handleColor = (e) =>{ // 모달창이 눌렸을때 하늘색으로 바꿔주기 위한 함수
@@ -475,8 +480,9 @@ const FAQ = () => {
                                                 <>
                                                 <div onClick={() => {
                                                     openQuestions(el.id);
+                                                    qopen === el.id ? setClick(!click) : setClick(click)
                                                 }} className='title'
-                                                >Q. {el.main_content}</div>
+                                                > {el.main_content}</div>
                                                 <div>
                                                     <div className="username">{el.username}</div>
                                                     <div className="end">{el.updatedAt}</div>
