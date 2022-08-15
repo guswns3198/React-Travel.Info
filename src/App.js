@@ -38,7 +38,6 @@ function App() {
               <Routes>
                 <Route path="/" element={<Main dispatch = {dispatch}/>} />
                 <Route path="/FAQ" element={<FAQ />} />
-                <Route path="/Jeju" element={<Jeju />} />
                 <Route path="/Event" element={<Event state = {state}/>} />
                 <Route path="/InKorea" element={<InKorea />} />
                 <Route path="/Overseas" element={<Overseas />} />
