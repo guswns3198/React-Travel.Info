@@ -286,7 +286,7 @@ const FAQ = () => {
       }
 
     const handleButtonClick = () => { // 질문을 등록했을때 기존 더미 배열에 추가시켜주는 함수
-
+        
         if(title !== '' && content !== ''){
             const tweet = {
                 id: tweets.length ,
