@@ -3,6 +3,7 @@ import styled from "styled-components";
 import {useState} from "react"
 import Footer from '../components/Footer'
 import Seoul from './Seoul';
+import Jeju from './Jeju';
 
 const Wrapper = styled.div`
 
@@ -59,7 +60,7 @@ const InKorea = () => {
         {region : '충청', id:4},
         {region : '경상', id:5},
         {region : '전라', id:6},
-        {region : '제주', id:7}
+        {region : '제주', id:7, select:<Jeju />}
     ]
 
     const handleRegionClick = (key) => {
