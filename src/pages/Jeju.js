@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 const Jeju = () => {
   return (
-    <div>Jeju</div>
+    <div>Jejuadasddasdadasdasdasdasdasdasdsadad</div>
   )
 }
 
