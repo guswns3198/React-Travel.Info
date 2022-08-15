@@ -4,6 +4,7 @@ import {useState} from "react"
 import Footer from '../components/Footer'
 import Seoul from './Seoul';
 import Jeju from './Jeju';
+import GyeongGi from './Gyeongi_Tourist_Dsetination/Gyeongi';
 
 const Wrapper = styled.div`
 
@@ -52,9 +53,10 @@ const InKorea = () => {
     const [click, setClick] = useState(false)
     const [regionIndex, setRegionIndex] = useState(null)
 
+    // select:<GyeongGi/>
     const dummy_region = [
         {region : '서울', id:0, select:<Seoul />},
-        {region : '경기', id:1},
+        {region : '경기', id:1, select:<GyeongGi/>},
         {region : '인천', id:2},
         {region : '강원', id:3},
         {region : '충청', id:4},
