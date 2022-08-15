@@ -8,6 +8,12 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons";
 const Wrapper = styled.div`
     height: 75vh;
 
+    .num_list{
+        margin: 0px 10px;
+        font-size: 25px;
+        cursor: pointer;
+    }
+
     .pageNation{
         display: flex;
         justify-content: center;
@@ -243,6 +249,7 @@ const FAQ = () => {
     const [upOpen, setUpOpen] = useState(null); // 어떤 컨테이너의 수정버튼을 눌렀는지 아이디 비교를 위해
     const [upTitle, setUpTitle] = useState(''); // 수정하는 제목을 저장해주는애
     const [upContent, setUpContent] = useState(''); // 수정하는 내용을 저장해주는애
+    const [page, setPage] = useState(1);
 
 
     const openModalHandler = () => { // 모달버튼을 누르면 실행될 함수 (열렸니 닫혔니)
@@ -254,14 +261,8 @@ const FAQ = () => {
     };
 
     const openQuestions = (e) => { // 특정 질문을 눌렀을때 해당된 창만 열리게 해주는 함수
-        if(!upOpen){
-            setQopen(e);
-            setClick(!click);
-        }
-        if(upOpen){
-            alert('수정을 완료 해주세요 !!')
-        }
-
+        setQopen(e);
+        setClick(!click);
     }
 
     const handleChangeTitle = (e) => { // 인풋창에 입력한값을 그대로 저장해주는 함수
@@ -293,7 +294,8 @@ const FAQ = () => {
                 password: '123',
                 main_content: title,
                 sub_content: content,
-                updatedAt: new Date().toLocaleDateString('ko-KR')
+                updatedAt: new Date().toLocaleDateString('ko-KR'),
+                page: Math.ceil((tweets.length + 1) /5)
         };
 
         const newTweets = [tweet, ...tweets]
@@ -303,7 +305,7 @@ const FAQ = () => {
             if(title === ''){
                 alert('제목을 입력해주세요!!')
             }
-            if(content === ''){
+            if(content === '' && title !== ''){
                 alert('내용을 입력해주세요!!')
             }
         }
@@ -390,6 +392,8 @@ const FAQ = () => {
         }
         return arr
     }
+    
+    pageNation(Math.ceil(tweets.length / 5))
 
     const list = [ // 모달들의 더미데이터
         { id:0, name: '여행상품 예약은 어떻게 하나요 ?',
@@ -412,9 +416,6 @@ const FAQ = () => {
         { id:2, name: '해외 패키지 예약이 가능한가요?',
             content: `  현재 코로나로 인하여 각 국가별 입국 가능 조건이 상이하며, 사전고지 없이 변경될 수 있습니다.`}
     ]
-
-
-
 
     return(
         <>
@@ -463,10 +464,10 @@ const FAQ = () => {
                             }}>등록</button>
                         </div>
                     </div>
-                    
                         {tweets.map((el) => {
                             return (
                                 <div key={el.id}>
+                                    {el.page === page ?
                                     <div className="list_container">
                                         <div>
                                             <div className="list_head">
@@ -511,8 +512,9 @@ const FAQ = () => {
                                         <FontAwesomeIcon icon={faCheck} className='check unCheck' />}
                                         
                                     </div>
+                                    : undefined}
                                     {qopen === el.id && click ?
-                                     <div className="answer_container">
+                                        <div className="answer_container">
                                         {el.sub_content !== undefined ?
                                         <div className="answer_head line">
                                             Q. {el.sub_content}
@@ -543,9 +545,14 @@ const FAQ = () => {
                         })}
                 </div>
             </div>
-            {pageNation(Math.ceil(tweets.length / 5))}
-                <div className="pageNation">{arr.map(el => {
-                    return el
+                <div className="pageNation">{arr.map((el, key) => {
+                    return (
+                        <div key={key}>
+                            <span className="num_list" onClick={() => {
+                                setPage(el);
+                            }}>{el}</span>
+                        </div>
+                    )
                 })}</div>
             <Footer /> 
         </Wrapper>
