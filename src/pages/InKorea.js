@@ -2,9 +2,12 @@ import React from 'react';
 import styled from "styled-components";
 import {useState} from "react"
 import Footer from '../components/Footer'
-import Seoul from './Seoul';
+import Seoul from '../pages/Seoul';
 import Jeju from './Jeju';
 import GyeongGi from './Gyeongi_Tourist_Dsetination/Gyeongi';
+import Incheon from "./Incheon_Tourlist_Destination/Incheon";
+import Gangwon from "./Gangwon_Tourlist_Destination/Gangwon";
+import Chungcheong from './Chungcheong_Tourlist_Destination/Chungcheong';
 
 const Wrapper = styled.div`
 
@@ -57,9 +60,9 @@ const InKorea = () => {
     const dummy_region = [
         {region : '서울', id:0, select:<Seoul />},
         {region : '경기', id:1, select:<GyeongGi/>},
-        {region : '인천', id:2},
-        {region : '강원', id:3},
-        {region : '충청', id:4},
+        {region : '인천', id:2, select:<Incheon />},
+        {region : '강원', id:3, select:<Gangwon />},
+        {region : '충청', id:4, select:<Chungcheong />},
         {region : '경상', id:5},
         {region : '전라', id:6},
         {region : '제주', id:7, select:<Jeju />}

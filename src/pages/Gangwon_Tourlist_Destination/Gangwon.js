@@ -1,19 +1,19 @@
 import React, { useEffect } from 'react'
 import {useState} from "react"
 import styled from "styled-components"
-import Castle from './Castle'
-import Building from './Building'
-import LotteWorld from './LotteWorld'
+import Gyeongpo from './Gyeongpo'
+import Sokcho from './Sokcho'
+import Seolark from './Seolark'
 
-const Seoul=()=>{
+const Gangwon=()=>{
 
   const [isclick, setIsClick] = useState(false)
   const [isregionIndex, setIsRegionIndex] = useState(null)
 
     const dummy_seoul = [
-      {region : '경복궁', id:0, select:<Castle />},
-      {region : '롯데월드', id:1, select:<LotteWorld />},
-      {region : '63빌딩', id:2, select:<Building />}
+      {region : '경포해변', id:0, select:<Gyeongpo />},
+      {region : '속초', id:1, select:<Sokcho />},
+      {region : '설악산', id:2, select:<Seolark />}
   ]
 
     const handleRegionClick = (key) => {
@@ -89,4 +89,4 @@ const Seoul=()=>{
     )
 }
 
-export default Seoul;
+export default Gangwon;
