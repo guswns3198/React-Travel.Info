@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import styled from "styled-components";
 
+
 const Wrapper = styled.div`
 display: flex;
 justify-content: center;
@@ -23,16 +24,17 @@ justify-content: center;
 
 `
 
-const Halla_mountain = () => {
+
+const Cheonjiyeon = () => {
     useEffect(()=>{
         var container = document.getElementById('map');
         var options = {
-            center: new kakao.maps.LatLng(33.364605, 126.537303),
+            center: new kakao.maps.LatLng(33.239244, 126.554417),
             level: 5
         };
 
         var map = new kakao.maps.Map(container, options);
-        var markerPosition  = new kakao.maps.LatLng(33.364605, 126.537303); 
+        var markerPosition  = new kakao.maps.LatLng(33.239244, 126.554417); 
         var marker = new kakao.maps.Marker({
             position: markerPosition
         });
@@ -46,11 +48,13 @@ const Halla_mountain = () => {
                 <div className="castle" id="map" style={{width:"400px", height:"300px"}}></div>
                 
                 <p className="describe">
-                대한민국에서 가장 큰 섬인 제주도에 있으며 대한민국의 실효 지배 영토 내의 최고봉[6]이자 가장 높은 산(해발 1,947m).[7] 대한민국의 국립공원 중 하나다.[8] 국립공원 전역이 유네스코 세계유산으로 지정되었다.[9] 그리고 대한민국의 실효지배 영토 내 해상 활화산이다.[10] 이름을 풀이하면 운한(雲漢: 은하수, 또는 높은 하늘)을 당긴다(拏)는 뜻으로 은하수를 붙잡을 정도로 높은 산이라는 뜻이다.[11] 금강산, 지리산과 함께 대한민국 삼신산(三神山) 중 하나로 꼽힌다.
+                천지연폭포(天地淵瀑布)는 제주도 서귀포시 서귀동에 있는 폭포이다. ‘천지연’이란 이름은 ‘하늘(天)과 땅(地)이 만나서 이룬 연못’이라는 뜻이다.
+
+폭포의 절벽은 화산활동으로 인해 생성된 조면암이 섞인 안산암으로 이루어져있다. 폭포수의 폭은 약 12 m 높이는 22 m, 연못의 수심은 약 20 m이다. 계곡에는 아열대성·난대성의 각종 상록수와 양치식물 등이 밀생하는 울창한 숲을 이룬다.
                 </p>
             </Wrapper>
         </>
     )
 }
 
-export default Halla_mountain;
+export default Cheonjiyeon

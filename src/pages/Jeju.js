@@ -2,6 +2,8 @@ import React from 'react'
 import {useState} from "react"
 import styled from "styled-components"
 import Halla_mountain from "./Jeju_Tourist_Destination/Halla_mountain"
+import Seongsan from './Jeju_Tourist_Destination/Seongsan';
+import Cheonjiyeon from './Jeju_Tourist_Destination/Cheonjiyeon';
 
 const Jeju_css = styled.div`
 
@@ -9,7 +11,6 @@ const Jeju_css = styled.div`
   width: 94vw;
 
   .tap{
-    height: 15%;
     display: flex;
     justify-content: space-around;
     padding-top : 10px;
@@ -26,6 +27,7 @@ const Jeju_css = styled.div`
     transition: .3s;
     cursor: pointer;
     border-radius: 20px;
+    height: 60px;
   }
 
   .list:hover{
@@ -50,8 +52,8 @@ const Jeju = () => {
 
   const tourist_destination = [
     {id : 0 , name : '한라산' , page : <Halla_mountain/>},
-    {id : 1 , name : '성산일출봉' , page : undefined},
-    {id : 2 , name : '천지연폭포' , page : undefined}
+    {id : 1 , name : '성산일출봉' , page : <Seongsan />},
+    {id : 2 , name : '천지연폭포' , page : <Cheonjiyeon />}
   ]
 
   const handleButtonClick = (e) => {
