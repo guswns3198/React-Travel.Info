@@ -14,10 +14,10 @@ header{
 .pagenation-box{
     display: flex;
     flex-direction: row;
-    background-color: gray;
+    /* background-color: gray; */
     align-items: center;
     justify-content: center;
-
+    
 }
 
 .pagenation-box > .pageBtns{
@@ -25,7 +25,11 @@ header{
     flex-direction: row;   
     margin: 10px;
 }
-
+table{
+    
+    
+     height : '50px'
+}
 button{
     width: 20px;
     height: 20px;
@@ -43,9 +47,8 @@ const EventLottery = () => {
         <Styles>
         <header>{`>이벤트 당첨자 발표`}</header>
         <div className='main'>
-
             <div className='table-container'>
-                <table className = "table1" border="black">
+                <table className = "table1" border = "black" width = "100%">
                     <tbody>
                         <tr>
                             <th>번호</th>
@@ -65,21 +68,81 @@ const EventLottery = () => {
                             <td>2022.08.02</td>
                             <td>76</td>
                         </tr>
+                        <tr>
+                            <td>784</td>
+                            <td>하와이 하얏트리젠시 2박 숙박권 당첨자 발표</td>
+                            <td>2022.08.02</td>
+                            <td>76</td>
+                        </tr>
+                        <tr>
+                            <td>784</td>
+                            <td>닫힌 브랜치 테스트</td>
+                            <td>2022.08.02</td>
+                            <td>76</td>
+                        </tr>
+                        <tr>
+                            <td>784</td>
+                            <td>하와이 하얏트리젠시 2박 숙박권 당첨자 발표</td>
+                            <td>2022.08.02</td>
+                            <td>76</td>
+                        </tr>
+                        <tr>
+                            <td>784</td>
+                            <td>닫힌 브랜치 테스트</td>
+                            <td>2022.08.02</td>
+                            <td>76</td>
+                        </tr>
+                        <tr>
+                            <td>784</td>
+                            <td>하와이 하얏트리젠시 2박 숙박권 당첨자 발표</td>
+                            <td>2022.08.02</td>
+                            <td>76</td>
+                        </tr>
+                        <tr>
+                            <td>784</td>
+                            <td>닫힌 브랜치 테스트</td>
+                            <td>2022.08.02</td>
+                            <td>76</td>
+                        </tr>
+                        <tr>
+                            <td>784</td>
+                            <td>하와이 하얏트리젠시 2박 숙박권 당첨자 발표</td>
+                            <td>2022.08.02</td>
+                            <td>76</td>
+                        </tr>
+                        <tr>
+                            <td>784</td>
+                            <td>닫힌 브랜치 테스트</td>
+                            <td>2022.08.02</td>
+                            <td>76</td>
+                        </tr>
+                        <tr>
+                            <td>784</td>
+                            <td>하와이 하얏트리젠시 2박 숙박권 당첨자 발표</td>
+                            <td>2022.08.02</td>
+                            <td>76</td>
+                        </tr>
+                        <tr>
+                            <td>784</td>
+                            <td>닫힌 브랜치 테스트</td>
+                            <td>2022.08.02</td>
+                            <td>76</td>
+                        </tr>
                     </tbody>
                 </table>
             </div> 
 
                 <div className='pagenation-box'>
-                    <button className='moveToFirst'></button>
-                    <button className='pageMove'>앞</button>
+                    <button className='moveToFirst'><span className='shape'></span></button>
+                    <button className='pageMove'><span className='shape'></span>앞</button>
                     <div className='pageBtns'>
-                        <button className='pageBtn'>1</button>
-                        <button className='pageBtn'>2</button>
-                        <button className='pageBtn'>3</button>
-                        <button className='pageBtn'>4</button>
+                        <button className='pageBtn'><span className='shape'></span>1</button>
+                        <button className='pageBtn'><span className='shape'></span>2</button>
+                        <button className='pageBtn'><span className='shape'></span>3</button>
+                        <button className='pageBtn'><span className='shape'></span>4</button>
                     </div>
-                    <button className='pageMove'>뒤</button>
-                    <button className='moveToLast'></button>
+                    <button className='pageMove'><span className='shape'></span>뒤</button>
+                    <button className='moveToLast'><span className='shape'></span></button>
                 </div>
 
             <div className='searchBox'>
