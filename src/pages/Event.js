@@ -2,10 +2,8 @@ import styled from "styled-components";
 import Footer from '../components/Footer'
 import {useEffect, useState} from 'react'
 import EventLottery from "../components/Event-components/Event-lottery";
-// import {EndEvent_dummy_data} from "../dummy/event_dummy_data";
 
 const Styles = styled.div`
- /* border: solid 3px black; */
 
  .e-mainArea{
     display : flex;
@@ -14,11 +12,9 @@ const Styles = styled.div`
  }
 
  .e-sideBar{
-    /* border: solid black 1px; */
     width: 15vw;
  }
  .e-intro{
-    /* border: solid black 1px; */
     width: 70vw;
     margin-left: 20px;
 }
@@ -44,7 +40,7 @@ button{
     position: relative;
     color: white;
     overflow: hidden;
-}
+ }
 button:focus{
     outline:none;  
 }
@@ -143,9 +139,6 @@ header{
     transition: 0.2s;
 }
 
-/* .subMenu{
-    background-color: lightgray;
-} */
 
 ul{
     list-style: none;
@@ -177,15 +170,62 @@ ul{
     display:flex;
     flex-direction: column;
 }
-.eventList{
-    /* border: solid black 2px; */
-    
-}
+
 .mainImg{
-    height: 75vh;
-    width:75vw;
+    height: 75%;
+    width: 75%;
+    border: black solid 1px;
+    animation: fadein 1s;
+
+    @keyframes fadein {
+        from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    };
+    }
 }
 `
+
+const Modal = styled.div`
+    display : flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:center;
+    background-color: #DCFFDC;
+    border: black solid 2px;
+    height: 100px;
+    transition: 2s;
+    animation: fadein 2s;
+    z-index: auto;
+    margin-left: 6%;
+    margin-right: 6%;
+
+
+    @keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    };
+}
+  img{
+    border: solid black 2px;
+  }
+
+  .modal-Text{
+  }
+    
+  .Modal-Btn{
+    height: 50px;
+    width: 50px;
+    background-color: black
+    }
+
+`
+
 
 
 const Event = ({state}) => {
@@ -213,13 +253,30 @@ const Event = ({state}) => {
             }
             
         }
+
+    useEffect(()=>{
+        setTimeout(()=>{
+            return (
+                <>
+                {setOpenModal(true)}
+                </>
+            ) 
+        }, 2000)
+    }, [])
+
     
     const [eventDummies, setEventDummies] = useState([])
     const [openlottery , setOpenLottery] = useState(true)
     const [isFirstRender, setIsFirstRender] = useState(true)
     const [pageCount , setPageCount] = useState(1)
     const [isEnd, setIsEnd] = useState(true);
+    const [openModal,setOpenModal] = useState(false);
     
+
+    const handleModal = () => {
+        setOpenModal(!openModal)
+    }
+
     const handleToLottery = (e) => {
         if(e.target.textContent === '이벤트 안내'){
             return setOpenLottery(true);
@@ -228,10 +285,12 @@ const Event = ({state}) => {
             return setOpenLottery(false);
         }
     }
+
     const HandleFirstRender = () => {
         setEventDummies([])
         setIsFirstRender(true)
     }
+
     const moveToCount = (e) => {
         setPageCount(Number(e.target.textContent))
     }
@@ -246,11 +305,29 @@ const Event = ({state}) => {
         return arr;
     }
 
+
+
+
     return (
         <>
-        {/* {console.log(state)} */}
+  
         <Styles>
+        {openModal 
+                ?
+                    <Modal>
+                        {/* <div>!CLICK!</div> */}
+                        <img src={state} width = '25%' height= '100%' ></img>
+                        <div className="modal-Text" >
+                            오늘 떠나와 함께하는 즐거운 여행~! 각종 이벤트를 통한 할인으로 떠나보세요!
+                        </div>
+                        <button className="Modal-Btn" onClick={handleModal}>
+                            <span className="shape"></span>
+                            닫기
+                        </button>
+                    </Modal>
+                : null}
             <section className="e-mainArea">
+     
                 {/*사이드바 영역 */}
                 <article className="e-sideBar">
                     <header>이벤트</header>
@@ -277,14 +354,16 @@ const Event = ({state}) => {
                             <li className = "subMenu" onClick={e => Load(e)}>종료된 이벤트</li>
                         </ul>
                         <ul className="eventContainer">
+                        
                         {isFirstRender 
-                        ? <img className="mainImg" src = {state}/> 
-
+                        
+                        ? 
+                        <img className="mainImg" src = {state}/>  
                         :
                         eventDummies.map((el, idx)=>{
                             if(Math.ceil((idx + 1)/8 ) === pageCount){
                                 return (    
-                                    <>
+                                    
                                     <li className = "eventList" key = {idx}>
                                         <span className="columBox">  
                                                 <img width = '340vw'src = {el.img}/>
@@ -296,18 +375,19 @@ const Event = ({state}) => {
                                         {el.startDate} - 
                                         {el.endDate}
                                     </li>
-                                    </>
+                                    
                                 )
                             }
                         })}
                    
                         </ul>
 
-                        {Pagenation(eventDummies).map((el) => {
+                        {Pagenation(eventDummies).map((el, idx) => {
                             return(
-                                <button onClick={e => moveToCount(e)}>
+                                <button key = {idx} onClick={e => moveToCount(e)}>
                                      <span className="shape"></span>
-                                    {el}</button>
+                                    {el}
+                                </button>
                             )
                         })}
                         </>
