@@ -1,9 +1,52 @@
 // import react from 'react'
 import styled from 'styled-components'
+import {useState} from 'react';
+import { useEffect } from 'react';
 // import Button from '@mui/material/Button';
 
-const Styles = styled.div`
+const lottery_result = [
+    {
+        question: "하와이 카할라 리조트 1박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "괌 PIC 슈페리어플러스 3박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    {
+        question: "리모와 오리지날 캐빈 S 캐리어 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "코타키나발루 수트라하버 마젤란 디럭스씨뷰 3박 숙박권 당첨자",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    {
+        question: "르메르 브라운 스몰 크로와상백 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "사이판 코랄오션 디럭스오션 3박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    {
+        question: "세부 제이파크 디럭스 3박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "구찌 1955 홀스빗 미니 GG 슈프림 숄더백 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
 
+]
+
+
+const Styles = styled.div`
 header{
     border-bottom: solid green;
 }
@@ -41,9 +84,45 @@ button{
     flex-direction: row;
     justify-content: center;
 }
+
+.searchBtn{
+    height: 50px;
+    width: 50px;
+    flex-grow: 0.2;
+
+}
+.resetBtn{
+    flex-grow: 0.2;
+    margin-left: 10px;
+}
 `
 
+
 const EventLottery = () => {
+    const [inputValue, setInputValue] = useState("")
+    const [dummy, setDummy] = useState([])
+
+    useEffect(()=>{
+        setDummy(lottery_result)
+    },[])
+ 
+
+    const handleChange = (e) => {
+        setInputValue(e.target.value)
+    }
+
+    const handleClick = (e) => {
+        
+           const filteredDummies =  lottery_result.filter((el) => {
+            return el.question.includes(inputValue)
+        })
+
+        setDummy(filteredDummies)
+    }
+    const handleReset = () => {
+        setDummy(lottery_result)
+    }
+
     return( 
         <Styles>
         <header>{`>이벤트 당첨자 발표`}</header>
@@ -57,78 +136,16 @@ const EventLottery = () => {
                             <th>작성일</th>
                             <th>조회수</th>
                         </tr>
-                        <tr>
-                            <td>784</td>
-                            <td>하와이 하얏트리젠시 2박 숙박권 당첨자 발표</td>
-                            <td>2022.08.02</td>
-                            <td>76</td>
-                        </tr>
-                        <tr>
-                            <td>784</td>
-                            <td>닫힌 브랜치 테스트</td>
-                            <td>2022.08.02</td>
-                            <td>76</td>
-                        </tr>
-                        <tr>
-                            <td>784</td>
-                            <td>하와이 하얏트리젠시 2박 숙박권 당첨자 발표</td>
-                            <td>2022.08.02</td>
-                            <td>76</td>
-                        </tr>
-                        <tr>
-                            <td>784</td>
-                            <td>닫힌 브랜치 테스트</td>
-                            <td>2022.08.02</td>
-                            <td>76</td>
-                        </tr>
-                        <tr>
-                            <td>784</td>
-                            <td>하와이 하얏트리젠시 2박 숙박권 당첨자 발표</td>
-                            <td>2022.08.02</td>
-                            <td>76</td>
-                        </tr>
-                        <tr>
-                            <td>784</td>
-                            <td>닫힌 브랜치 테스트</td>
-                            <td>2022.08.02</td>
-                            <td>76</td>
-                        </tr>
-                        <tr>
-                            <td>784</td>
-                            <td>하와이 하얏트리젠시 2박 숙박권 당첨자 발표</td>
-                            <td>2022.08.02</td>
-                            <td>76</td>
-                        </tr>
-                        <tr>
-                            <td>784</td>
-                            <td>닫힌 브랜치 테스트</td>
-                            <td>2022.08.02</td>
-                            <td>76</td>
-                        </tr>
-                        <tr>
-                            <td>784</td>
-                            <td>하와이 하얏트리젠시 2박 숙박권 당첨자 발표</td>
-                            <td>2022.08.02</td>
-                            <td>76</td>
-                        </tr>
-                        <tr>
-                            <td>784</td>
-                            <td>닫힌 브랜치 테스트</td>
-                            <td>2022.08.02</td>
-                            <td>76</td>
-                        </tr>
-                        <tr>
-                            <td>784</td>
-                            <td>하와이 하얏트리젠시 2박 숙박권 당첨자 발표</td>
-                            <td>2022.08.02</td>
-                            <td>76</td>
-                        </tr>
-                        <tr>
-                            <td>784</td>
-                            <td>닫힌 브랜치 테스트</td>
-                            <td>2022.08.02</td>
-                            <td>76</td>
-                        </tr>
+                        {dummy.map((el, idx) => {
+                            return (
+                            <tr key={idx}>
+                                <td>{idx}</td>
+                                <td>{el.question}</td>
+                                <td>{el.createdAt}</td>
+                                <td>{el.see}</td>
+                            </tr> 
+                            )                         
+                        })}
                     </tbody>
                 </table>
             </div> 
@@ -149,10 +166,16 @@ const EventLottery = () => {
             <div className='searchBox'>
                 <select>
                     <option value="제목">제목</option>
-                    <option value="내용">내용</option>
                 </select>
-                <input></input>
-                <div>검색</div>
+                <textarea
+                    onChange={e => handleChange(e)}
+                    value = {inputValue}  ></textarea>
+                <button className = "searchBtn" onClick={e => handleClick(e)}>
+                    <span className='shape'></span>
+                    검색</button>
+                <button className = "resetBtn" onClick={() => handleReset()}>
+                    <span className='shape'></span>
+                     reset </button>
             </div>
             
         </div>
