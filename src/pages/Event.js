@@ -363,7 +363,6 @@ const Event = ({state}) => {
                         eventDummies.map((el, idx)=>{
                             if(Math.ceil((idx + 1)/8 ) === pageCount){
                                 return (    
-                                    
                                     <li className = "eventList" key = {idx}>
                                         <span className="columBox">  
                                                 <img width = '340vw'src = {el.img}/>
