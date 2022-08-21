@@ -76,7 +76,7 @@ const EndEvent_dummy_data = [
     {
         id: shortId(),
         img: "http://img.modetour.co.kr/promotion20/11734/event_banner_220520_2.jpg",
-        title: "신세계면세점/현대뱍화점면세점 최대 245만원 혜택",
+        title: "신세계면세점/현대백화점면세점 최대 245만원 혜택",
         startDate: "2022-07-25",
         endDate: "2022-08-31"
 
@@ -90,7 +90,7 @@ const EndEvent_dummy_data = [
     },    {
         id: shortId(),
         img: "http://img.modetour.co.kr/promotion20/11734/event_banner_220520_2.jpg",
-        title: "신세계면세점/현대뱍화점면세점 최대 245만원 혜택",
+        title: "신세계면세점/현대백화점면세점 최대 245만원 혜택",
         startDate: "2022-07-25",
         endDate: "2022-08-31"
 
@@ -104,7 +104,7 @@ const EndEvent_dummy_data = [
     },    {
         id: shortId(),
         img: "http://img.modetour.co.kr/promotion20/11415/banner_11415.jpg",
-        title: "신세계면세점/현대뱍화점면세점 최대 245만원 혜택",
+        title: "신세계면세점/현대백화점면세점 최대 245만원 혜택",
         startDate: "2022-07-25",
         endDate: "2022-08-31"
 
@@ -152,7 +152,7 @@ const EndEvent_dummy_data = [
     },    {
         id: shortId(),
         img: "http://img.modetour.co.kr/promotion20/11734/event_banner_220520_2.jpg",
-        title: "신세계면세점/현대뱍화점면세점 최대 245만원 혜택",
+        title: "신세계면세점/현대백화점면세점 최대 245만원 혜택",
         startDate: "2022-07-25",
         endDate: "2022-08-31"
 
@@ -166,7 +166,7 @@ const EndEvent_dummy_data = [
     },    {
         id: shortId(),
         img: "http://img.modetour.co.kr/promotion20/11734/event_banner_220520_2.jpg",
-        title: "신세계면세점/현대뱍화점면세점 최대 245만원 혜택",
+        title: "신세계면세점/현대백화점면세점 최대 245만원 혜택",
         startDate: "2022-07-25",
         endDate: "2022-08-31"
 
@@ -180,7 +180,7 @@ const EndEvent_dummy_data = [
     },    {
         id: shortId(),
         img: "http://img.modetour.co.kr/promotion20/11734/event_banner_220520_2.jpg",
-        title: "신세계면세점/현대뱍화점면세점 최대 245만원 혜택",
+        title: "신세계면세점/현대백화점면세점 최대 245만원 혜택",
         startDate: "2022-07-25",
         endDate: "2022-08-31"
 
@@ -188,7 +188,7 @@ const EndEvent_dummy_data = [
     {
         id: shortId(),
         img: "http://img.modetour.co.kr/promotion20/11734/event_banner_220520_2.jpg",
-        title: "신세계면세점/현대뱍화점면세점 최대 245만원 혜택",
+        title: "신세계면세점/현대백화점면세점 최대 245만원 혜택",
         startDate: "2022-07-25",
         endDate: "2022-08-31"
 
@@ -202,7 +202,7 @@ const EndEvent_dummy_data = [
     },    {
         id: shortId(),
         img: "http://img.modetour.co.kr/promotion20/11734/event_banner_220520_2.jpg",
-        title: "신세계면세점/현대뱍화점면세점 최대 245만원 혜택",
+        title: "신세계면세점/현대백화점면세점 최대 245만원 혜택",
         startDate: "2022-07-25",
         endDate: "2022-08-31"
 
@@ -216,7 +216,7 @@ const EndEvent_dummy_data = [
     },    {
         id: shortId(),
         img: "http://img.modetour.co.kr/promotion20/11415/banner_11415.jpg",
-        title: "신세계면세점/현대뱍화점면세점 최대 245만원 혜택",
+        title: "신세계면세점/현대백화점면세점 최대 245만원 혜택",
         startDate: "2022-07-25",
         endDate: "2022-08-31"
 
@@ -264,7 +264,7 @@ const EndEvent_dummy_data = [
     },    {
         id: shortId(),
         img: "http://img.modetour.co.kr/promotion20/11734/event_banner_220520_2.jpg",
-        title: "신세계면세점/현대뱍화점면세점 최대 245만원 혜택",
+        title: "신세계면세점/현대백화점면세점 최대 245만원 혜택",
         startDate: "2022-07-25",
         endDate: "2022-08-31"
 
@@ -278,7 +278,7 @@ const EndEvent_dummy_data = [
     },    {
         id: shortId(),
         img: "http://img.modetour.co.kr/promotion20/11734/event_banner_220520_2.jpg",
-        title: "신세계면세점/현대뱍화점면세점 최대 245만원 혜택",
+        title: "신세계면세점/현대백화점면세점 최대 245만원 혜택",
         startDate: "2022-07-25",
         endDate: "2022-08-31"
 
@@ -292,7 +292,7 @@ const EndEvent_dummy_data = [
     },    {
         id: shortId(),
         img: "http://img.modetour.co.kr/promotion20/11734/event_banner_220520_2.jpg",
-        title: "신세계면세점/현대뱍화점면세점 최대 245만원 혜택",
+        title: "신세계면세점/현대백화점면세점 최대 245만원 혜택",
         startDate: "2022-07-25",
         endDate: "2022-08-31"
 
@@ -306,7 +306,7 @@ const EndEvent_dummy_data = [
     },    {
         id: shortId(),
         img: "http://img.modetour.co.kr/promotion20/11734/event_banner_220520_2.jpg",
-        title: "신세계면세점/현대뱍화점면세점 최대 245만원 혜택",
+        title: "신세계면세점/현대백화점면세점 최대 245만원 혜택",
         startDate: "2022-07-25",
         endDate: "2022-08-31"
 
@@ -320,11 +320,463 @@ const EndEvent_dummy_data = [
     },    {
         id: shortId(),
         img: "http://img.modetour.co.kr/promotion20/11734/event_banner_220520_2.jpg",
-        title: "신세계면세점/현대뱍화점면세점 최대 245만원 혜택",
+        title: "신세계면세점/현대백화점면세점 최대 245만원 혜택",
         startDate: "2022-07-25",
         endDate: "2022-08-31"
 
     },
 ]
 
-export  {IngEvent_dummy_data , EndEvent_dummy_data};
+const lottery_result = [
+    {
+        question: "하와이 카할라 리조트 1박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "괌 PIC 슈페리어플러스 3박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    {
+        question: "리모와 오리지날 캐빈 S 캐리어 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "코타키나발루 수트라하버 마젤란 디럭스씨뷰 3박 숙박권 당첨자",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    {
+        question: "르메르 브라운 스몰 크로와상백 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "사이판 코랄오션 디럭스오션 3박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    {
+        question: "세부 제이파크 디럭스 3박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "구찌 1955 홀스빗 미니 GG 슈프림 숄더백 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "하와이 카할라 리조트 1박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "괌 PIC 슈페리어플러스 3박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    {
+        question: "리모와 오리지날 캐빈 S 캐리어 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "코타키나발루 수트라하버 마젤란 디럭스씨뷰 3박 숙박권 당첨자",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    {
+        question: "르메르 브라운 스몰 크로와상백 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "사이판 코랄오션 디럭스오션 3박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    
+    {
+        question: "세부 제이파크 디럭스 3박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "구찌 1955 홀스빗 미니 GG 슈프림 숄더백 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "하와이 카할라 리조트 1박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "괌 PIC 슈페리어플러스 3박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    {
+        question: "리모와 오리지날 캐빈 S 캐리어 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "코타키나발루 수트라하버 마젤란 디럭스씨뷰 3박 숙박권 당첨자",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    {
+        question: "르메르 브라운 스몰 크로와상백 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "사이판 코랄오션 디럭스오션 3박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    {
+        question: "세부 제이파크 디럭스 3박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "구찌 1955 홀스빗 미니 GG 슈프림 숄더백 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "하와이 카할라 리조트 1박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "괌 PIC 슈페리어플러스 3박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    {
+        question: "리모와 오리지날 캐빈 S 캐리어 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "코타키나발루 수트라하버 마젤란 디럭스씨뷰 3박 숙박권 당첨자",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    {
+        question: "르메르 브라운 스몰 크로와상백 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "사이판 코랄오션 디럭스오션 3박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    
+    {
+        question: "세부 제이파크 디럭스 3박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "구찌 1955 홀스빗 미니 GG 슈프림 숄더백 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    {
+        question: "하와이 카할라 리조트 1박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "괌 PIC 슈페리어플러스 3박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    {
+        question: "리모와 오리지날 캐빈 S 캐리어 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "코타키나발루 수트라하버 마젤란 디럭스씨뷰 3박 숙박권 당첨자",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    {
+        question: "르메르 브라운 스몰 크로와상백 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "사이판 코랄오션 디럭스오션 3박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    {
+        question: "세부 제이파크 디럭스 3박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "구찌 1955 홀스빗 미니 GG 슈프림 숄더백 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "하와이 카할라 리조트 1박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "괌 PIC 슈페리어플러스 3박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    {
+        question: "리모와 오리지날 캐빈 S 캐리어 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "코타키나발루 수트라하버 마젤란 디럭스씨뷰 3박 숙박권 당첨자",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    {
+        question: "르메르 브라운 스몰 크로와상백 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "사이판 코랄오션 디럭스오션 3박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    
+    {
+        question: "세부 제이파크 디럭스 3박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "구찌 1955 홀스빗 미니 GG 슈프림 숄더백 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "하와이 카할라 리조트 1박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "괌 PIC 슈페리어플러스 3박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    {
+        question: "리모와 오리지날 캐빈 S 캐리어 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "코타키나발루 수트라하버 마젤란 디럭스씨뷰 3박 숙박권 당첨자",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    {
+        question: "르메르 브라운 스몰 크로와상백 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "사이판 코랄오션 디럭스오션 3박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    {
+        question: "세부 제이파크 디럭스 3박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "구찌 1955 홀스빗 미니 GG 슈프림 숄더백 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "하와이 카할라 리조트 1박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "괌 PIC 슈페리어플러스 3박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    {
+        question: "리모와 오리지날 캐빈 S 캐리어 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "코타키나발루 수트라하버 마젤란 디럭스씨뷰 3박 숙박권 당첨자",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    {
+        question: "르메르 브라운 스몰 크로와상백 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "사이판 코랄오션 디럭스오션 3박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    
+    {
+        question: "세부 제이파크 디럭스 3박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "구찌 1955 홀스빗 미니 GG 슈프림 숄더백 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    {
+        question: "하와이 카할라 리조트 1박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "괌 PIC 슈페리어플러스 3박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    {
+        question: "리모와 오리지날 캐빈 S 캐리어 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "코타키나발루 수트라하버 마젤란 디럭스씨뷰 3박 숙박권 당첨자",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    {
+        question: "르메르 브라운 스몰 크로와상백 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "사이판 코랄오션 디럭스오션 3박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    {
+        question: "세부 제이파크 디럭스 3박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "구찌 1955 홀스빗 미니 GG 슈프림 숄더백 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "하와이 카할라 리조트 1박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "괌 PIC 슈페리어플러스 3박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    {
+        question: "리모와 오리지날 캐빈 S 캐리어 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "코타키나발루 수트라하버 마젤란 디럭스씨뷰 3박 숙박권 당첨자",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    {
+        question: "르메르 브라운 스몰 크로와상백 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "사이판 코랄오션 디럭스오션 3박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    
+    {
+        question: "세부 제이파크 디럭스 3박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "구찌 1955 홀스빗 미니 GG 슈프림 숄더백 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "하와이 카할라 리조트 1박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "괌 PIC 슈페리어플러스 3박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    {
+        question: "리모와 오리지날 캐빈 S 캐리어 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "코타키나발루 수트라하버 마젤란 디럭스씨뷰 3박 숙박권 당첨자",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    {
+        question: "르메르 브라운 스몰 크로와상백 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "사이판 코랄오션 디럭스오션 3박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    {
+        question: "세부 제이파크 디럭스 3박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "구찌 1955 홀스빗 미니 GG 슈프림 숄더백 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "하와이 카할라 리조트 1박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "괌 PIC 슈페리어플러스 3박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    {
+        question: "리모와 오리지날 캐빈 S 캐리어 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "코타키나발루 수트라하버 마젤란 디럭스씨뷰 3박 숙박권 당첨자",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    {
+        question: "르메르 브라운 스몰 크로와상백 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "사이판 코랄오션 디럭스오션 3박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },    
+    {
+        question: "세부 제이파크 디럭스 3박 숙박권 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+    {
+        question: "구찌 1955 홀스빗 미니 GG 슈프림 숄더백 당첨자 발표",
+        createdAt: "2022.08.21",
+        see: 87,
+    },
+
+]
+
+export  {IngEvent_dummy_data , EndEvent_dummy_data, lottery_result};

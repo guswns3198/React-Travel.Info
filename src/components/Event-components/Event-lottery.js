@@ -2,49 +2,7 @@
 import styled from 'styled-components'
 import {useState} from 'react';
 import { useEffect } from 'react';
-// import Button from '@mui/material/Button';
-
-const lottery_result = [
-    {
-        question: "하와이 카할라 리조트 1박 숙박권 당첨자 발표",
-        createdAt: "2022.08.21",
-        see: 87,
-    },
-    {
-        question: "괌 PIC 슈페리어플러스 3박 숙박권 당첨자 발표",
-        createdAt: "2022.08.21",
-        see: 87,
-    },    {
-        question: "리모와 오리지날 캐빈 S 캐리어 당첨자 발표",
-        createdAt: "2022.08.21",
-        see: 87,
-    },
-    {
-        question: "코타키나발루 수트라하버 마젤란 디럭스씨뷰 3박 숙박권 당첨자",
-        createdAt: "2022.08.21",
-        see: 87,
-    },    {
-        question: "르메르 브라운 스몰 크로와상백 당첨자 발표",
-        createdAt: "2022.08.21",
-        see: 87,
-    },
-    {
-        question: "사이판 코랄오션 디럭스오션 3박 숙박권 당첨자 발표",
-        createdAt: "2022.08.21",
-        see: 87,
-    },    {
-        question: "세부 제이파크 디럭스 3박 숙박권 당첨자 발표",
-        createdAt: "2022.08.21",
-        see: 87,
-    },
-    {
-        question: "구찌 1955 홀스빗 미니 GG 슈프림 숄더백 당첨자 발표",
-        createdAt: "2022.08.21",
-        see: 87,
-    },
-
-]
-
+import { lottery_result } from '../../dummy/event_dummy_data';
 
 const Styles = styled.div`
 header{
@@ -79,6 +37,13 @@ button{
     height: 20px;
 }
 
+.moveToFirst{
+    width: 30px;
+}
+.moveToLast{
+    width: 30px;
+}
+
 .searchBox{
     display: flex;
     flex-direction: row;
@@ -94,33 +59,91 @@ button{
 .resetBtn{
     flex-grow: 0.2;
     margin-left: 10px;
+    height: 50px;
 }
+
+.pageBtn{
+
+    width: 25px;
+}
+
+
 `
 
 
 const EventLottery = () => {
-    const [inputValue, setInputValue] = useState("")
-    const [dummy, setDummy] = useState([])
+    const [inputValue, setInputValue] = useState("");
+    const [dummy, setDummy] = useState([]);
+    const [pageCount, setPageCount] = useState(1);
+    const [lastPageCount, setLastPageCount] = useState(0);
+    const [isFound , setIsFound] = useState(true)
 
     useEffect(()=>{
-        setDummy(lottery_result)
+        setDummy(lottery_result);
     },[])
  
 
     const handleChange = (e) => {
-        setInputValue(e.target.value)
+        setInputValue(e.target.value);
     }
 
-    const handleClick = (e) => {
-        
-           const filteredDummies =  lottery_result.filter((el) => {
+    const handleSearch = (e) => {
+        setIsFound(true)
+        setPageCount(1);
+        setDummy(lottery_result);
+           let filteredDummies =  lottery_result.filter((el) => {
             return el.question.includes(inputValue)
         })
+        setDummy(filteredDummies);
+        if(filteredDummies.length !== 0){
+            setIsFound(true)
+        } else {
+            setIsFound(false)
+        }
 
-        setDummy(filteredDummies)
     }
     const handleReset = () => {
-        setDummy(lottery_result)
+        setIsFound(true)
+        setDummy(lottery_result);
+        setPageCount(1);
+    }
+
+    const Pagenation = (dummies) => {
+        let arr = [];
+        let last = 0;
+        for(let i = 1 ; i < Math.ceil(dummies.length / 10 + 1) ; i++){
+             arr.push(i);
+            last = i
+        };
+        useEffect(()=>{
+            setLastPageCount(Number(last));
+        },[dummy])
+      
+        return arr;
+    }
+
+    const handlePagenation = (e) => {
+        setPageCount(Number(e.target.textContent));
+    }
+
+    const handlePrevious = () => {
+        if(pageCount > 1){
+            setPageCount(pageCount - 1);
+        }
+    }
+
+    const handleNext = () => {
+        if(pageCount < lastPageCount){
+            setPageCount(pageCount + 1);
+        }
+    }
+
+    const handleLast = () => {
+        setPageCount(lastPageCount);
+    }
+
+    const handleFirst = () => {
+        setPageCount(1);
     }
 
     return( 
@@ -136,31 +159,39 @@ const EventLottery = () => {
                             <th>작성일</th>
                             <th>조회수</th>
                         </tr>
-                        {dummy.map((el, idx) => {
-                            return (
-                            <tr key={idx}>
-                                <td>{idx}</td>
-                                <td>{el.question}</td>
-                                <td>{el.createdAt}</td>
-                                <td>{el.see}</td>
-                            </tr> 
-                            )                         
-                        })}
+                        {isFound ? dummy.map((el, idx) => {
+                            if(Math.ceil((idx + 1) / 10 ) === pageCount){
+                                return (
+                                    <tr key={idx}>
+                                        <td>{idx}</td>
+                                        <td>{el.question}</td>
+                                        <td>{el.createdAt}</td>
+                                        <td>{el.see}</td>
+                                    </tr> 
+                                )                         
+                            }
+                        }) : <div className='failSearch'>검색 결과가 없습니다</div>} 
                     </tbody>
                 </table>
             </div> 
 
                 <div className='pagenation-box'>
-                    <button className='moveToFirst'><span className='shape'></span></button>
-                    <button className='pageMove'><span className='shape'></span>앞</button>
+                    <button className='moveToFirst'onClick={() => handleFirst()}><span className='shape'></span>{`<<`}</button>
+                    <button className='pageMove' onClick={() => handlePrevious()}><span className='shape'></span>{`<`}</button>
                     <div className='pageBtns'>
-                        <button className='pageBtn'><span className='shape'></span>1</button>
-                        <button className='pageBtn'><span className='shape'></span>2</button>
-                        <button className='pageBtn'><span className='shape'></span>3</button>
-                        <button className='pageBtn'><span className='shape'></span>4</button>
+                        {Pagenation(dummy).map((el, idx)=> {
+                            return(
+                                <button key={idx} className='pageBtn' onClick = {(e) => handlePagenation(e)}>
+                                    <span className='shape'></span>
+                                    {el}
+                                </button>
+                            
+                            )
+                        })}
+                        
                     </div>
-                    <button className='pageMove'><span className='shape'></span>뒤</button>
-                    <button className='moveToLast'><span className='shape'></span></button>
+                    <button className='pageMove' onClick={() => handleNext()}><span className='shape'></span>{`>`}</button>
+                    <button className='moveToLast' onClick={() => handleLast()}><span className='shape'></span>{`>>`}</button>
                 </div>
 
             <div className='searchBox'>
@@ -170,7 +201,7 @@ const EventLottery = () => {
                 <textarea
                     onChange={e => handleChange(e)}
                     value = {inputValue}  ></textarea>
-                <button className = "searchBtn" onClick={e => handleClick(e)}>
+                <button className = "searchBtn" onClick={e => handleSearch(e)}>
                     <span className='shape'></span>
                     검색</button>
                 <button className = "resetBtn" onClick={() => handleReset()}>
