@@ -6,8 +6,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import shortid from "shortid";
 
-//수정 했다
-
 const Wrapper = styled.div`
     height: 75vh;
 
