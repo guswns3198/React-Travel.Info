@@ -439,6 +439,8 @@ const FAQ = () => {
             content: `  현재 코로나로 인하여 각 국가별 입국 가능 조건이 상이하며, 사전고지 없이 변경될 수 있습니다.`}
     ]
 
+    console.log(select)
+
     return(
         <>
         <Wrapper>
