@@ -310,7 +310,7 @@ const Main = ( {dispatch}) => {
 
               
     </Section>
-      <Footer />
+      {/* <Footer /> */}
     
     </>
   )
